@@ -1,0 +1,152 @@
+.body{
+    width: 100%;
+    }
+
+.theme_Body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 65%;
+    margin: 0 auto;
+    }
+
+
+  .theme_Container {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 280px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1%;
+    border-radius:5px;
+    /* border: 1px solid grey; */
+    box-shadow:0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .theme_Image {
+    width: 50%;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .line{
+    width: 1px;
+    height: 220px;
+    background-color: grey;
+    margin-top: 2%;
+}
+
+  .theme_Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    width: 100%;
+    padding-left: 20px;
+    position: relative;
+  }
+
+
+  .theme_Title {
+    font-weight: bold;
+    font-style: normal;
+    color: black;
+    padding-top: 3%;
+    font-size: 25px;
+  }
+
+
+
+  .theme_Description {
+    color: black;
+    padding-top: 3%;
+    padding-bottom: 5%;
+
+  }
+
+
+  .theme_Details{
+    color: black;
+  }
+
+  .theme_Details span{
+    font-style: oblique;
+  }
+
+
+
+  .theme_button_comment {
+    padding: 1%;
+    color: black;
+    background-color: white;
+    border: 1px solid green;
+    border-radius: 5px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+
+
+
+  .theme_button_comment:hover{
+    color: black;
+  }
+
+
+  .comments{
+    width: 100%;
+  }
+
+  .comment_card{
+    background-color: white;
+    margin-bottom: 10px;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1%;
+    border-radius: 5px;
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .comment_text{
+    text-align: left;
+    color: black;
+    font-style: italic;
+    font-size: 28px;
+    margin-top: 60px;
+  }
+
+  .comment_left{
+    width: 22%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .comment_right{
+    width: 78%;
+    padding: 15px;
+  }
+
+
+  .back{
+    color: black;
+    text-decoration: underline;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    }
+
+    .back:hover{
+    color: grey;
+    }

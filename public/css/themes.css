@@ -1,0 +1,236 @@
+
+/* promenila */
+.themes_Body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  margin-bottom: 80px;
+}
+
+/* promeinila */
+.newsFeed{
+  width: 20%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  min-height: fit-content;
+  border-radius: 5px;
+  padding: 1%;
+  background-color: white;
+}
+
+/* promenila */
+.newsFeed h2{
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 3%;
+  font-weight: bold;
+}
+
+/* promenila */
+.news-feed-item{
+  display: flex;
+  flex-direction: column;
+  color: black;
+  border-bottom: 1px solid black;
+  margin-bottom: 2%;
+  padding-bottom: 2%;
+  padding-top: 5%;
+}
+
+
+.add-news-feed-form form{
+  color: black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+
+.add-news-feed-form textarea{
+  width: 100%;
+  height: 70px;
+  color: black;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.add-news-feed-form button{
+    border: 1px solid green;
+    background-color: white;
+    color:black;
+    border-radius: 5px;
+    align-self: center;
+    margin: 5%;
+    padding: 2%;
+    font-weight: bold;
+}
+
+
+/* promenila */
+.delete_newsFeed {
+    /* padding: 1%; */
+    font-size: 14px;
+    color: red;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* promenila */
+.themes_Grid {
+    width: 72%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* promenila */
+.theme_Item {
+    width: 92%;
+    height: 250px;
+    margin-bottom: 15px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: black;
+    border-radius: 5px;
+}
+
+/* pormenila */
+.theme_createDate{
+    color: black;
+    font-weight: 400;
+    float: right;
+    font-size: 13px;
+    margin-top: 15px;
+    padding-right: 15px;
+    font-style: italic;
+}
+
+
+/* promeila */
+.themes_Image {
+    width: 35%;
+    height: 95%;
+    position: relative;
+    overflow: hidden;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/* promeila */
+.themes_Image img {
+    max-width: 100%;
+    border-radius: 2px;
+    align-items:right;
+    border-radius:2px;
+    height: 80%;
+    object-fit: cover;
+    margin-top: 10%;
+}
+
+/* promenila */
+.themes_Content {
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 10px;
+    margin-top: 10px;
+    position: relative;
+}
+
+
+/* promenila */
+.theme_User{
+    width: 15%;
+    height: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+
+/* promenila */
+.themes_Title {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+/* PROMENILA */
+.themes_Title:hover{
+    color: black;
+}
+
+/* promenila */
+.themes_Text {
+    font-size: 15px;
+    color: black;
+
+}
+
+/* promenila */
+.create_new_theme{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* promenila */
+.create_new_theme a{
+    text-decoration: none;
+    border: none;
+    /* background-color: #375f3b; */
+    border: 1px solid green;
+    border-radius: 5px;
+    align-self: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: color 0.1s;
+    color: black;
+    font-weight: bold;
+}
+
+/* promenila */
+.create_new_theme a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+
+
+/* promenila */
+.new_theme{
+    background-color: whitesmoke;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border: 5px;
+    padding: 20px;
+    width: 20%;
+    height: 350px;
+}
+
+
+.go-back-button {
+    display: none;
+}
+
+.no_theme{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 200px;
+    margin-top: 5%;
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

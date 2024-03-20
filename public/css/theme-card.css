@@ -1,0 +1,37 @@
+/* ------------------------------------------------ */
+/* PROMENILA SVE STAVKE*/
+/* -------------------------------------------- */
+
+.theme_Item{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.theme_button_comment {
+    padding: 1%;
+    color: black;
+    background-color: white;
+    border: 1px solid green;
+    border-radius: 5px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+
+
+  .theme_button_comment:hover{
+    color: black;
+  }
+
+  .vertical-line{
+    width: 0.2px;
+    height: 80%;
+    background-color:grey;
+  }

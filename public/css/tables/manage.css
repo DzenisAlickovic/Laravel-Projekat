@@ -1,0 +1,122 @@
+.heading{
+    text-align: left;
+    /* color: rgb(74, 74, 74); */
+    color: black;
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+}
+
+.manage_container {
+    max-width: 80%;
+    margin:30px 10%;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); */
+}
+
+.line{
+    width: 100%;
+    height: 0.5px;
+    background-color: gray;
+    margin-bottom: 4%;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+
+td {
+    background-color: rgb(252, 252, 252);
+}
+
+
+th {
+    background-color: #C8EC8E;
+}
+
+
+td.actions, th.actions {
+    text-align: right;
+    border-left: none;
+}
+
+.user-name{
+    display: flex;
+}
+
+.theme_rows, .users_rows{
+    border-bottom: 1px solid  #C8EC8E;
+}
+
+.theme_rows:last-child, .users_rows:last-child{
+    border-bottom: none;
+}
+
+
+.edit-button,.delete-button,.options-button {
+    padding: 5px 10px;
+    color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover{
+    color: black;
+}
+
+.edit-button{
+    border: 1px solid  #4A6443;
+    color: black;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+}
+
+.delete-button:hover{
+    background-color: rgb(158, 26, 26);
+    color: white;
+}
+
+.theme-name{
+    color: black;
+}
+
+.theme-name:hover{
+    color: black;
+}
+
+.no_theme{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 200px;
+    margin-left: 35%;
+    margin-top: 10%;
+    margin-bottom: 15%;
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
