@@ -1,6 +1,5 @@
 .heading{
     text-align: left;
-    /* color: rgb(74, 74, 74); */
     color: black;
     font-size: 35px;
     margin-top: 20px;
@@ -16,7 +15,6 @@
     padding: 40px;
     background-color: white;
     border-radius: 10px;
-    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); */
 }
 
 .line{
@@ -119,4 +117,44 @@ td.actions, th.actions {
     font-size: 18px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+.theme_option{
+    display: flex;
+    flex-direction: row;
+}
+
+.reject-button{
+    background-color: red;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 5px;
+    width: 90px;
+}
+
+
+
+.reject-button:hover{
+    background-color: rgb(93, 14, 14);
+    color: white;
+}
+
+.accept-button{
+    padding: 5px 10px;
+    color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid green;
+    transition: background-color 0.3s;
+    margin-right: 5px;
+    width: 100px;
+}
+
+.accept-button:hover{
+    text-decoration: underline;
+    color: black;
+}
+
 

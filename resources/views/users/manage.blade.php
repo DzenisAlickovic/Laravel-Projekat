@@ -13,29 +13,33 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Korisnici</th>
-                        <th>Uloge</th>
+                        <th>Korisnik</th>
+                        <th>Uloga</th>
+                        <th>Email</th>
+                        <th>Broj telefona</th>
+                        <th>Datum rodjenja</th>
+                        <th>JMBG</th>
+                        <th>Grad</th>
+                        <th>Gržava</th>
                         <th class="actions">Opcije</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
                     <tr class="users_rows">
-                        <td class="user-name"><img style="width:30px; height:30px; border-radius:80px; margin-right:10px" src="{{ asset('storage/' . $user->picture) }}" alt="{{ $user->name }}">  {{ $user->name }}</td>
-                        <td class="user-role">{{ $user->role }}</td>
+                        <td class="user-name" style="text-align: center; vertical-align: middle;">
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <img src="{{ asset('storage/' . $user->picture) }}" alt="{{ $user->name }}" style="width: 35px; height: 35px; border-radius: 50%; display: block; margin: 0 auto;">
+                                <span style="display: block;">{{ $user->name }}</span>
+                            </div>
+                        </td><td class="user-role">{{ $user->role }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->phone_number }}</td>
+                        <td>{{ $user->birth_date }}</td>
+                        <td>{{ $user->personal_number }}</td>
+                        <td>{{ $user->place_of_birth }}</td>
+                        <td>{{ $user->country }}</td>
                         <td class="actions">
-                            @if ($user->role === 'korisnik')
-                                <form style="display: inline;" method="POST" action="/users/{{ $user->id }}/promote">
-                                    @csrf
-                                    <button class="edit-button" ><i class="fa-solid fa-arrow-up" style="padding-right: 5px"></i>Unapredi u mentora</button>
-                                </form>
-                            @elseif ($user->role === 'moderator')
-                                <form  style="display: inline;" method="POST" action="/users/{{ $user->id }}/demote">
-                                    @csrf
-                                    <button class="edit-button" ><i class="fa-solid fa-arrow-down" style="padding-right: 5px"></i>Promenite ulogu na korisnika</button>
-                                    {{-- Degradiraj na korisnika --}}
-                                </form>
-                            @endif
                             <form style="display: inline;" method="POST" action="/users/{{ $user->id }}" id="delete-form-{{ $user->id }}">
                                 @csrf
                                 @method('DELETE')
@@ -51,14 +55,24 @@
             <div>
                 <p>Nema korisnika</p>
             </div>
+
+        @if ($themes->isNotEmpty())
+            <div class="manage_container">
+                <h1 class="heading">Neodobrene teme</h1>
+            </div>
+        @else
+            <div>
+                <p>Nema neodobrenih tema</p>
+            </div>
+        @endif
     @endunless
+
 </x-layout>
 
 
 <script>
     function confirmDelete(userId) {
         if (confirm('Da ii ste siguri da zelite da izbrisite korisnika?')) {
-            // If user confirms, submit the form
             document.getElementById('delete-form-' + userId).submit();
         }
     }

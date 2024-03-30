@@ -1,5 +1,4 @@
 
-/* promenila */
 .themes_Body {
   width: 100%;
   display: flex;
@@ -8,7 +7,7 @@
   margin-bottom: 80px;
 }
 
-/* promeinila */
+
 .newsFeed{
   width: 20%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -18,7 +17,7 @@
   background-color: white;
 }
 
-/* promenila */
+
 .newsFeed h2{
   color: black;
   text-align: center;
@@ -27,7 +26,7 @@
   font-weight: bold;
 }
 
-/* promenila */
+
 .news-feed-item{
   display: flex;
   flex-direction: column;
@@ -67,9 +66,8 @@
 }
 
 
-/* promenila */
+
 .delete_newsFeed {
-    /* padding: 1%; */
     font-size: 14px;
     color: red;
     border: none;
@@ -78,7 +76,7 @@
     transition: background-color 0.3s;
 }
 
-/* promenila */
+
 .themes_Grid {
     width: 72%;
     display: flex;
@@ -88,7 +86,6 @@
 }
 
 
-/* promenila */
 .theme_Item {
     width: 92%;
     height: 250px;
@@ -99,7 +96,6 @@
     border-radius: 5px;
 }
 
-/* pormenila */
 .theme_createDate{
     color: black;
     font-weight: 400;
@@ -111,7 +107,7 @@
 }
 
 
-/* promeila */
+
 .themes_Image {
     width: 35%;
     height: 95%;
@@ -119,20 +115,31 @@
     overflow: hidden;
     margin-right: 5px;
     margin-left: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* promeila */
+.image{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.date{
+    width: 100%;
+    height: 15%;
+}
+
 .themes_Image img {
-    max-width: 100%;
+    max-width: auto;
     border-radius: 2px;
     align-items:right;
     border-radius:2px;
-    height: 80%;
+    height: 100%;
     object-fit: cover;
-    margin-top: 10%;
 }
 
-/* promenila */
 .themes_Content {
     width: 60%;
     height: 90%;
@@ -145,7 +152,7 @@
 }
 
 
-/* promenila */
+
 .theme_User{
     width: 15%;
     height: 100%;
@@ -157,7 +164,6 @@
 
 
 
-/* promenila */
 .themes_Title {
     color: black;
     font-size: 20px;
@@ -165,30 +171,29 @@
     padding-bottom: 10px;
 }
 
-/* PROMENILA */
+
 .themes_Title:hover{
     color: black;
 }
 
-/* promenila */
+
 .themes_Text {
     font-size: 15px;
     color: black;
 
 }
 
-/* promenila */
+
 .create_new_theme{
     display: flex;
     justify-content: center;
 }
 
 
-/* promenila */
+
 .create_new_theme a{
     text-decoration: none;
     border: none;
-    /* background-color: #375f3b; */
     border: 1px solid green;
     border-radius: 5px;
     align-self: center;
@@ -199,7 +204,7 @@
     font-weight: bold;
 }
 
-/* promenila */
+
 .create_new_theme a:hover {
     color: black;
     text-decoration: underline;
@@ -207,7 +212,7 @@
 
 
 
-/* promenila */
+
 .new_theme{
     background-color: whitesmoke;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);

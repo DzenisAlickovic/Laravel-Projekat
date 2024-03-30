@@ -15,11 +15,8 @@
 }
 
 
-
-
 .form_container p{
     font-size: 50px;
-    /* font-weight: 500; */
 }
 
 .form_container{
@@ -49,7 +46,6 @@
 .form_container label{
     color: black;
     font-size: 17px;
-    font-weight: 600;
 }
 
 .form_container input{
@@ -84,11 +80,6 @@
     text-decoration: none;
 }
 
-/*
-.form_container p{
-    margin-top: 2%;
-    color: red;
-} */
 
 .form_container a{
     text-decoration: none;
@@ -104,10 +95,6 @@
     color: #c75223;
 }
 
-
-/* .file_input{
-    margin-bottom: 10px;
-} */
 
 
 input[type="file"] {

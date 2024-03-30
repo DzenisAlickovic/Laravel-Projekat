@@ -68,12 +68,62 @@ Route::get('/themes/{theme}',[ThemeController::class, 'show']);
 Route::get('/themes/{theme}/comments', [CommentController::class, 'show'])->name('themes.comments');
 
 
+//Accept Reject Themes
+Route::post('/themes/{theme}/reject', [ThemeController::class, 'rejectTheme'])->name('themes.reject');
+
+Route::post('/themes/{theme}/accept', [ThemeController::class, 'acceptTheme'])->name('themes.accept');
+
+
+// Routes for managing moderator requests
+Route::post('/users/{user}/reject', [UserController::class, 'rejectModeratorRequest'])->name('users.reject');
+
+Route::post('/users/{user}/accept', [UserController::class, 'acceptModeratorRequest'])->name('users.accept');
+
+//Follow themes
+Route::post('themes/{theme}/follow', [ThemeController::class, 'followTheme'])->name('themes.follow');
+
+Route::delete('themes/{theme}/unfollow', [ThemeController::class, 'unfollowTheme'])->name('themes.unfollow');
+
+//User follow themes
+Route::get('/followed-themes', [ThemeController::class, 'followedThemes'])->name('followed-themes.index');
+
+//Followers
+Route::get('/followers/{themeId}', [ThemeController::class, 'followedThemesIndex'])->name('followed-themes.followers');
+
+//Delete follower
+Route::delete('/themes/{themeId}/followers/{followerId}', [ThemeController::class, 'deleteFollower'])->name('followed-themes.delete-follower');
+
+
+
+//Anketa
+
+//Show poll
+Route::get('/themes/{theme}/details', [ThemeController::class, 'showDetails'])->name('theme.details');
+
+//Create poll form
+Route::get('/themes/{theme}/create-poll', [ThemeController::class, 'createPollForm'])->middleware(['auth', CheckModerator::class])->name('themes.create-poll');
+
+//Store poll
+Route::post('/themes/{theme}/polls', [ThemeController::class, 'storePoll'])->middleware(['auth', CheckModerator::class])->name('themes.store-poll');
+
+//Save response from poll
+Route::post('/poll/response/store', [ThemeController::class, 'storePollResponse'])->name('poll.response.store');
+
+//Delete poll
+Route::delete('/poll/{poll}', [ThemeController::class, 'deletePoll'])->middleware(['auth', CheckModerator::class])->name('poll.delete');
+
+
+
+
 
 //Users
 
-
 //Manage Users
 Route::get('/users/manage', [UserController::class, 'manage'])->middleware(['auth',CheckAdmin::class]);
+
+//Requests Users
+Route::get('/users/requests', [UserController::class, 'requests'])->middleware(['auth',CheckAdmin::class]);
+
 
 //Delete User
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->middleware(['auth',CheckAdmin::class]);

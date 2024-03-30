@@ -22,9 +22,65 @@
     justify-content: space-evenly;
     padding: 1%;
     border-radius:5px;
-    /* border: 1px solid grey; */
     box-shadow:0 0 15px rgba(0, 0, 0, 0.2);
   }
+
+  .anketa{
+
+    margin-bottom: 2%;
+  }
+
+  .anketa_container{
+    background-color: white;
+    width: 100%;
+    min-height: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    padding-top: 3%;
+    border-radius:5px;
+    box-shadow:0 0 15px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+  }
+
+  .anketa_container p{
+    justify-content: left;
+    color: black;
+    font-size: 17px;
+    align-items: left;
+    padding: 5px;
+  }
+
+  .new-poll{
+    height: 50px;
+    border:1px solid green;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: black;
+  }
+
+  .new-poll:hover{
+    color: black;
+  }
+
+  .followers-button{
+    color:black;
+    border: 1px solid black;
+    padding: 3%;
+    border-radius: 5px;
+    width: 110px;
+    font-weight: bold;
+    background-color:beige;
+  }
+
+  .followers-button:hover{
+    color: black;
+  }
+
 
   .theme_Image {
     width: 50%;
@@ -82,17 +138,35 @@
 
 
   .theme_button_comment {
-    padding: 1%;
+    padding: 3%;
     color: black;
     background-color: white;
     border: 1px solid green;
     border-radius: 5px;
     font-weight: bold;
+    width: 120px;
+    margin-right: 10px;
+
+}
+
+.follow{
+    display: flex;
+    flex-direction: row;
     position: absolute;
     right: 0;
     bottom: 0;
-    margin-bottom: 15px;
-    margin-right: 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+
+}
+
+.follow_button{
+    padding: 6%;
+    color: black;
+    background-color:rgb(217, 217, 241);
+    border-radius: 5px;
+    font-weight: bold;
+    width: 110px;
 }
 
 

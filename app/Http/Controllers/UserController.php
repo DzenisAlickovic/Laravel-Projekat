@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Themes;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Notifications\VerifyEmail;
 use Illuminate\Support\Facades\Hash;
+use App\Mail\ModeratorRejected;
+use App\Mail\ModeratorAccepted;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -45,12 +50,13 @@ class UserController extends Controller
             'personal_number' => 'jmbg',
             'phone_number' => 'broj telefona',
             'picture' => 'slika',
+
         ];
 
         $formFields = $request->validate([
             'name' => ['required', 'min:3', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users', 'email')],
-            'password' => ['required', 'confirmed', 'min:6', 'max:255'],
+            'password' => ['required', 'confirmed', 'min:8', 'max:255'],
             'gender' => ['required', 'in:male,female,other'],
             'place_of_birth' => ['required', 'string', 'max:255'],
             'country' => ['required', 'string', 'max:255'],
@@ -111,12 +117,29 @@ class UserController extends Controller
     }
 
 
-    //Manage Users
-    public function manage(){
+
+     //Manage Users
+     public function manage(){
         $adminId = auth()->user()->id;
         $users = User::where('id', '!=', $adminId)->get();
-        return view('users.manage', ['users' => $users]);
+        return view('users.manage', [
+            'users' => $users,
+        ]);
     }
+
+
+    //Manage Users
+    public function requests(){
+        $adminId = auth()->user()->id;
+        $users = User::where('id', '!=', $adminId)->get();
+        $themes = Themes::where('approved',  'false')->latest()->paginate(3);
+        return view('users.requests', [
+            'users' => $users,
+            'themes' => $themes
+        ]);
+    }
+
+
 
 
     //Authenticate User
@@ -204,5 +227,28 @@ class UserController extends Controller
         }
 
         return back()->with('message', 'Neuspešna degradacija korisnika');
+    }
+
+
+    public function rejectModeratorRequest(User $user)
+    {
+
+        DB::table('users')->where('id', $user->id)->update(['request' => 'rejected']);
+
+        // Send rejection email
+        Mail::to($user->email)->send(new ModeratorRejected($user));
+
+        return redirect()->back()->with('message', 'Zahtev korisnika je odbijen.');
+    }
+
+    public function acceptModeratorRequest(User $user)
+    {
+
+        DB::table('users')->where('id', $user->id)->update(['request' => 'accepted', 'role' => 'moderator']);
+
+        // Send acceptance email
+        Mail::to($user->email)->send(new ModeratorAccepted($user));
+
+        return redirect()->back()->with('message', 'Korisnik je postao moderator.');
     }
 }

@@ -7,7 +7,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <nav class="navbar">
-    {{-- <div class="container"> --}}
+
         <span style="display: flex; align-items: center;">
             {{-- <a href="/" class="logo" style="display: flex; align-items: center;">
                 <img src="/image/eco.png" width="50px" style="margin-right: 5px; max-width: none;">
@@ -21,15 +21,18 @@
 
         <ul class="nav-links">
 
-
             <div class="padding">
                 @guest
-                <a href="/" style="padding-top:10px; padding-right: 20px;">Početna</a>
+                    <a href="/" style="padding-top:10px; padding-right: 20px;">Početna</a>
                 @endguest
 
                 @auth
 
                 <li><a href="/"> Početna</a></li>
+
+                @if(auth()->user()->role == 'korisnik')
+                    <li><a href="{{ route('followed-themes.index') }}">Teme</a></li>
+                @endif
 
                 @if(auth()->user()->role == 'moderator')
                     <li><a href="/themes"> Moje teme</a></li>
@@ -37,9 +40,9 @@
                 @endif
 
                 @if (auth()->user()->role == 'admin')
-                    <li><a href="/users/manage"> Upravljaj korisnicima</a></li>
+                    <li><a href="/users/manage"> Korisnici</a></li>
+                    <li><a href="/users/requests"> Zahtevi</a></li>
                 @endif
-
 
 
                 <li id="userDropdown" class="dropdown">
@@ -54,7 +57,6 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="userDropdownMenuLink">
-
                         @auth
                             @if (auth()->user()->role === 'korisnik')
                                 <form  action="/apply-for-moderator" method="POST" class="mod">
@@ -87,7 +89,6 @@
             @endauth
 
         </ul>
-    {{-- </div> --}}
 
 </nav>
 <script>

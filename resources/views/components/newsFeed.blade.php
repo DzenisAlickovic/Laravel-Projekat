@@ -5,7 +5,7 @@
     <p class="time-passed" style="font-style: italic; font-size: 12px; text-align: right;"></p>
 
     @auth
-    @if (auth()->user()->role === 'admin') <!-- Show delete button for admin -->
+    @if (auth()->user()->role === 'admin')
         <form action="/delete-news-feed/{{$item->id}}" method="POST">
             @csrf
             @method('DELETE')
@@ -32,7 +32,7 @@
                     timePassed = 'upravo';
                 } else if (minutesPassed < 60) {
                     timePassed = `pre ${minutesPassed} minut${minutesPassed !== 1 ? 'a' : ''}`;
-                } else if (minutesPassed < 1440) { 
+                } else if (minutesPassed < 1440) {
                     const hoursPassed = Math.floor(minutesPassed / 60);
                     timePassed = `pre ${hoursPassed} sat${hoursPassed !== 1 ? 'a' : ''}`;
                 } else {
@@ -44,10 +44,8 @@
             });
         }
 
-        // Initial update
         updateTimePassed();
 
-        // Update time every minute (adjust interval as needed)
-        setInterval(updateTimePassed, 60000); // 60000 ms = 1 minute
+        setInterval(updateTimePassed, 60000);
     });
 </script>

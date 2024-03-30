@@ -36,19 +36,20 @@ class CommentController extends Controller
             return redirect('/')->with('message', 'Komentar uspešno dodat!');
         } catch (\Exception $e) {
             logger()->error('Greška prilikom čuvanja komentara: ' . $e->getMessage());
-            return redirect('/')->with('error', 'Greška prilikom čuvanja komentara. Molimo pokušajte ponovo.');
+            return redirect('/')->with('message', 'Greška prilikom čuvanja komentara. Molimo pokušajte ponovo.');
 
         }
     }
 
+    //Delete comment
     public function destroy($id)
     {
-        
+
         $comment = Comment::findOrFail($id);
 
         $comment->delete();
 
-        return redirect()->back()->with('success', 'Komentar je uspešno obrisan.');
+        return redirect()->back()->with('message', 'Komentar je uspešno obrisan.');
     }
 
 }

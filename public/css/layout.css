@@ -1,5 +1,4 @@
 .body {
-    /* background-image: url('/image/pozadina.jpg'); */
     background-color: white;
     background-size:cover;
     background-repeat: no-repeat;
@@ -12,14 +11,6 @@
     flex-direction: column;
 }
 
-/* .shadow{
-    background-color: rgba(253, 253, 253, 0.9);
-    width: 100%;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-
-} */
 
 .main-content {
     flex: 1;

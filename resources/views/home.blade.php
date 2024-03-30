@@ -17,7 +17,7 @@
 </head>
 <body class="body">
     @include('partials._navbar')
-    <x-flash-message/> {{--flash Message(popup when theme is created) --}}
+    <x-flash-message/>
 
     <x-layout>
 
@@ -36,18 +36,18 @@
         <div class="themes_Body">
 
             <div class="themes_Grid">
-                @unless (count($themes) == 0)
-
+                @unless ($themes->isEmpty())
                     @foreach ($themes as $theme)
                         <x-theme-card :theme="$theme" />
                     @endforeach
-
-                    @else
-                        <div>
-                            <p>Nema tema</p>
-                        </div>
+                @else
+                    <div>
+                        <p>Nema odobrenih tema</p>
+                    </div>
                 @endunless
             </div>
+
+
 
             <div class="newsFeed">
                 <h2>Najnovije vesti</h2>
@@ -55,7 +55,7 @@
                 <x-newsFeed  :item="$item"/>
                 @endforeach
                 @auth
-                    @if (auth()->user()->role === 'admin')
+                    @if (auth()->user()->role === 'admin' || auth()->user()->role === 'moderator')
                         <div class="add-news-feed-form">
                             <form action="/add-news-feed" method="POST">
                                 @csrf

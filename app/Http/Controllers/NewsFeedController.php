@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\NewsFeed;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NewsFeedController extends Controller
 {
@@ -39,11 +40,10 @@ class NewsFeedController extends Controller
     //Send message to apply for the moderator
     public function applyForModerator()
     {
-        if (auth()->user()->role === 'korisnik') {
-            $content = auth()->user()->name . '  se prijavio/la za moderatora.';
-            NewsFeed::create([
-                'content' => $content,
-            ]);
+        $user = auth()->user();
+
+        if ($user->role === 'korisnik') {
+            DB::table('users')->where('id', $user->id)->update(['request' => 'applied']);
 
             return back()->with('message', 'Vaša prijava je poslata.');
         }

@@ -2,7 +2,7 @@
 <x-layout>
 
     @unless ($themes->isEmpty())
-    <div class="manage_container" style="height: 65vh">
+    <div class="manage_container" style="height: 66vh">
         <h1 class="heading">Upravljanje temama</h1>
         <table>
             <thead>

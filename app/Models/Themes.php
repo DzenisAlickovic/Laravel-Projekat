@@ -12,7 +12,7 @@ class Themes extends Model
 
     protected $fillable = ['title', 'description', 'user_id', 'image'];
 
-    // Filter for search (name, description)
+    
     public function scopeFilter($query, array $filters)
     {
         if ($filters['search'] ?? false) {
@@ -22,17 +22,25 @@ class Themes extends Model
     }
 
 
-    // Relationship to User (First set up relations in database with migrations)
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    
-    // Relationship with comments
+
     public function comments()
     {
         return $this->hasMany(Comment::class, 'theme_id');
+    }
+
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'user_theme_follows', 'theme_id', 'user_id');
+    }
+
+    public function polls()
+    {
+        return $this->hasMany(Poll::class);
     }
 
 }
