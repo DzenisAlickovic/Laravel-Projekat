@@ -12,7 +12,7 @@
 
 
             <div class="theme_Info">
-                <span class="theme_Title" style="font-size: 18px">{{ $theme->title }}</span>
+                <span class="theme_Title" style="font-size: 20px">{{ $theme->title }}</span>
 
                 <span class="theme_Description"><span style="font-style:italic">Opis: </span> {{ $theme->description }}</span>
 
