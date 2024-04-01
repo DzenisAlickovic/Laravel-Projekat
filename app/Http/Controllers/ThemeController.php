@@ -175,7 +175,7 @@ class ThemeController extends Controller
     {
         DB::table('themes')->where('id', $theme->id)->update(['approved' => 'reject']);
 
-        Mail::to($theme->user->email)->send(new ThemeRejected($theme));
+        //Mail::to($theme->user->email)->send(new ThemeRejected($theme));
 
         return redirect()->back()->with('message', 'Tema je odbijena.');
     }
@@ -187,7 +187,7 @@ class ThemeController extends Controller
     {
         DB::table('themes')->where('id', $theme->id)->update(['approved' => 'true']);
 
-        Mail::to($theme->user->email)->send(new ThemeAccepted($theme));
+        // Mail::to($theme->user->email)->send(new ThemeAccepted($theme));
 
         return redirect()->back()->with('message', 'Tema je prihvaćena.');
     }
