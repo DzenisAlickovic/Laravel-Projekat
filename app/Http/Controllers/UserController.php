@@ -236,7 +236,7 @@ class UserController extends Controller
         DB::table('users')->where('id', $user->id)->update(['request' => 'rejected']);
 
         // Send rejection email
-        Mail::to($user->email)->send(new ModeratorRejected($user));
+        //Mail::to($user->email)->send(new ModeratorRejected($user));
 
         return redirect()->back()->with('message', 'Zahtev korisnika je odbijen.');
     }
@@ -247,7 +247,7 @@ class UserController extends Controller
         DB::table('users')->where('id', $user->id)->update(['request' => 'accepted', 'role' => 'moderator']);
 
         // Send acceptance email
-        Mail::to($user->email)->send(new ModeratorAccepted($user));
+       // Mail::to($user->email)->send(new ModeratorAccepted($user));
 
         return redirect()->back()->with('message', 'Korisnik je postao moderator.');
     }
