@@ -126,7 +126,7 @@
 
                     <div class="comment_right">
                         <p style=" padding-bottom:15px">
-                            <span style="color: black; font-size:15px; font-weight: bold;">Odg: {{ $theme->title }}</span>
+                            <span style="color: black; font-size:13px; font-weight: bold;">Odg: {{ $theme->title }}</span>
                             <span style="float: right; margin-right: 0; color: grey">{{ $theme->created_at->format('Y-m-d') }}</span>
                         </p>
                         <p style="font-size: 16px">{{ $comment->content }}</p>
