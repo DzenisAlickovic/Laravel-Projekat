@@ -43,7 +43,7 @@
                             <form style="display: inline;" method="POST" action="/users/{{ $user->id }}" id="delete-form-{{ $user->id }}">
                                 @csrf
                                 @method('DELETE')
-                                <button class="delete-button" onclick="confirmDelete({{ $user->id }})"><i class="fa-solid fa-trash" style="padding-right: 5px"></i>Izbriši</button>
+                                <button class="btn btn-danger " style="width: 90px" onclick="confirmDelete({{ $user->id }})"><i class="fa-solid fa-trash" style="padding-right: 5px"></i>Izbriši</button>
                             </form>
                         </td>
                     </tr>
