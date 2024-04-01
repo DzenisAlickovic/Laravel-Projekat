@@ -75,11 +75,11 @@ class UserController extends Controller
 
         $user = User::create($formFields);
 
-        $user->sendEmailVerificationNotification();
+        // $user->sendEmailVerificationNotification();
 
-        auth()->login($user);
+        // auth()->login($user);
 
-        return redirect('/resend-verification')->with('message', 'Kreiran i ulogovan novi korisnik!');
+        return redirect('/login')->with('message', 'Korisnik je uspesno registrovan!');
     }
 
 
