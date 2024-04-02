@@ -224,20 +224,3 @@
     .back:hover{
     color: grey;
     }
-
-    .comment_card {
-        position: relative;
-    }
-
-    .comment_right {
-        position: relative;
-    }
-
-    .comment_date {
-        position: absolute;
-        top: 0;
-        right: 0;
-        color: grey;
-        font-size: 13px;
-        font-style: italic;
-    }

@@ -142,8 +142,8 @@
 
 
                         <span class="comment_date" style="position: absolute;
-                        bottom: 0;
-                        left: 0;
+                        bottom: 5px;
+                        left: 10px;
                         color: grey;
                         font-size: 13px;
                         font-style: italic;">{{ $theme->created_at->format('Y-m-d') }}</span>
