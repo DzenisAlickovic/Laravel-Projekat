@@ -146,6 +146,7 @@
                         right: 0;
                         color: grey;
                         font-size: 13px;
+                        padding-top:10px;
                         font-style: italic;">{{ $theme->created_at->format('Y-m-d') }}</span>
                     </div>
                 </div>
