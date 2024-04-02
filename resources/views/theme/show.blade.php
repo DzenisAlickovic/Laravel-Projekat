@@ -107,7 +107,7 @@
 
 
             @foreach ($comments as $comment)
-                <div class="comment_card">
+                <div class="comment_card" style="position: relative;">
 
                     <div class="comment_left">
                         @if ($comment->user)
@@ -124,7 +124,7 @@
 
                     <span class="line"></span>
 
-                    <div class="comment_right">
+                    <div class="comment_right" style="position: relative;">
                         <p style=" padding-bottom:15px">
                             <span style="color: black; font-size:18px; font-weight: bold;">Odg: {{ $theme->title }}</span>
                         </p>
