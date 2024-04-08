@@ -141,12 +141,9 @@
                         @endauth
 
 
-                        <span class="comment_date" style="position: absolute;
-                        bottom: 5px;
-                        left: 10px;
-                        color: grey;
-                        font-size: 13px;
-                        font-style: italic;">{{ $theme->created_at->format('Y-m-d') }}</span>
+                        <span class="comment_date" style="position: absolute; bottom: 5px; left: 10px; color: grey; font-size: 13px; font-style: italic;">
+                            {{ $theme->created_at->format('Y-m-d') }}
+                        </span>
                     </div>
                 </div>
             @endforeach

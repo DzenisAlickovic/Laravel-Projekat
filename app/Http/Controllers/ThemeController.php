@@ -235,6 +235,7 @@ class ThemeController extends Controller
         return view('theme.create-poll', compact('theme'));
     }
 
+    
     public function storePoll(Request $request, $themeId)
     {
 

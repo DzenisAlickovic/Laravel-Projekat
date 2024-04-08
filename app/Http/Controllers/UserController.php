@@ -206,29 +206,6 @@ class UserController extends Controller
     }
 
 
-    //Promote Korisnik to a Moderator role
-    public function promote(User $user){
-
-        if($user->role === 'korisnik'){
-            $user->update(['role' => 'moderator']);
-            return back()->with('message', 'Korisnik unapređen u profesora');
-        }
-
-        return back()->with('message', 'Neuspešno unapređenje korisnika');
-    }
-
-
-     //Demote Korisnik to a Moderator role
-     public function demote(User $user){
-
-        if($user->role === 'moderator'){
-            $user->update(['role' => 'korisnik']);
-            return back()->with('message', 'Korisnik je degradiran u studenta');
-        }
-
-        return back()->with('message', 'Neuspešna degradacija korisnika');
-    }
-
 
     public function rejectModeratorRequest(User $user)
     {
