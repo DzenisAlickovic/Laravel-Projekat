@@ -1,75 +1,86 @@
-
 .form_body {
     display: flex;
     justify-content: center;
-    margin-bottom: 70px;
+    margin-bottom: 50px; /* Smanjen razmak na dnu */
 }
 
 .form_container {
-    width: 70%;
-    font-size: 20px;
-    margin-top: 3%;
+    width: 60%; /* Smanjena širina */
+    font-size: 18px; /* Smanjen font */
+    margin-top: 2%;
 }
 
-.form_container form{
-    width: 60%;
+.form_container form {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.form_container label{
+.form_container label {
     color: black;
-    font-size: 17px;
+    font-size: 16px; /* Smanjen font */
 }
 
-.form_container input{
+.form_container input {
     border-radius: 5px;
-    /* width: 90%; */
-    height: 40px;
-    padding-left: 12px;
-    padding-right: 12px;
+    height: 35px; /* Smanjena visina input polja */
+    padding-left: 10px;
+    padding-right: 10px;
     border: 1px solid grey;
+    margin-bottom: 15px; /* Dodato malo razmaka između input polja */
 }
 
-.form_container textarea{
+.form_container textarea {
     color: black;
-    border-radius: 2px;
-    border: 1px solid gray;
-    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 10px; /* Smanjen padding */
+    margin-bottom: 20px; /* Dodato razmaka ispod textarea */
 }
 
-.form_container a{
-    font-size: 17px;
+.form_container a {
+    font-size: 16px; /* Smanjen font */
 }
 
-.form_container a:hover{
-    font-size: 18px;
-}
-
-.create{
+.create {
     border: none;
-    background-color: rgb(156, 5, 5);
-    border-radius: 90px;
-    padding: 12px;
+    background-color: #c8a2c8; /* Svetlo lila boja */
+    border-radius: 25px;
+    padding: 10px;
     color: white;
-    font-size: 17px;
-    width: 300px;
+    font-size: 16px; /* Smanjen font */
+    width: 250px; /* Smanjena širina */
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 30px; /* Dodato malo više razmaka iznad */
 }
 
-.create:hover{
-    background-color: rgb(158, 26, 26);
+.create:hover {
+    background-color: #b689b6; /* Tamnija lila boja na hover */
     text-decoration: none;
 }
 
-.add{
-    width: 190px;
-    color: black;
+.add {
+    width: 170px; /* Smanjena širina dugmeta */
+    color: white;
     font-weight: bold;
-    font-size: 17px;
-    padding: 3px;
-    background-color: white;
-    border: 1px solid green;
-    border-radius: 90px;
+    font-size: 16px; /* Smanjen font */
+    padding: 8px; /* Smanjen padding */
+    background-color: #a8d08d; /* Svetlo zelena boja */
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 10px; /* Dodato malo razmaka iznad dugmeta */
 }
 
+.add:hover {
+    background-color: #8cbf6b; /* Tamnija zelena boja na hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Uklanjanje plus ikone na "Dodaj odgovor" dugmetu */
+.add i {
+    display: none; /* Sakriva ikonu plus */
+}

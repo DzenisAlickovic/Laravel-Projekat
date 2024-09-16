@@ -4,7 +4,7 @@ Poštovani moderator,
 
 Nažalost, vaš zahtev za postavljanje na poziciju moderatora je odbijen.
 
-Molimo vas da proverite naše smernice i ponovo podnesete zahtev ako želite.
+Molimo vas da proverite naše smernice i ponovo podnesete zahtev.
 
 Hvala vam na razumevanju.
 

@@ -43,7 +43,7 @@
                             <form style="display: inline;" method="POST" action="/users/{{ $user->id }}" id="delete-form-{{ $user->id }}">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger " style="width: 90px" onclick="confirmDelete({{ $user->id }})"><i class="fa-solid fa-trash" style="padding-right: 5px"></i>Izbriši</button>
+                                <button class="delete-button" style="width: 90px; padding-right: 5px;" onclick="confirmDelete({{ $user->id }})">Izbriši</button>
                             </form>
                         </td>
                     </tr>
@@ -58,11 +58,11 @@
 
         @if ($themes->isNotEmpty())
             <div class="manage_container">
-                <h1 class="heading">Neodobrene teme</h1>
+                <h1 class="heading">Neodobrene oglasi</h1>
             </div>
         @else
             <div>
-                <p>Nema neodobrenih tema</p>
+                <p>Nema neodobrenih oglasa</p>
             </div>
         @endif
     @endunless

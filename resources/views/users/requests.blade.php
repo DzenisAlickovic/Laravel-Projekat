@@ -4,7 +4,7 @@
 
     @unless ($themes->isEmpty())
     <div class="manage_container">
-        <h1 class="heading">Nove teme</h1>
+        <h1 class="heading">Novi oglasi</h1>
         {{-- <div class="line"></div> --}}
         <table>
             <thead>
@@ -30,13 +30,12 @@
                             <div class="theme_option">
                                 <form method="POST" action="{{ route('themes.accept', $theme) }}">
                                     @csrf
-                                    <button class="accept-button"><i class="fas fa-check" style="padding-right: 5px; color:green"></i>Prihvati</button>
+                                    <button class="delete-button"><i style="padding-right: 5px; color:red"></i>Obriši oglas</button>
                                 </form>
                                 <form method="POST" action="{{ route('themes.reject', $theme) }}">
                                     @csrf
-                                    <button class="reject-button"><i class="fas fa-times" style="padding-right: 5px"></i>Odbij</button>
+
                                 </form>
-                            </div>
                         </td>
                     </tr>
                 @endforeach
@@ -45,9 +44,9 @@
     </div>
     @else
         <div class="manage_container">
-            <h1 class="heading">Neodobrene teme</h1>
+            <h1 class="heading">Oglasi</h1>
             <p style="font-size: 20px; color:  black; font-weight:bold;background-color:#C8EC8E; padding:5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
-                Trenutno nema novih tema
+                Trenutno nema završenih oglasa
             </p>
         </div>
 

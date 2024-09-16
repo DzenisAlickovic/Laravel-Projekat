@@ -1,85 +1,86 @@
-.form_body{
+.form_body {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Pomeranje u levo */
     min-height: 60vh;
     margin-top: 15px;
 }
 
-
-.form_container{
-    width: 38%;
+.form_container {
+    width: 30%; /* Smanjena širina */
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: left;
+    align-items: flex-start; /* Poravnanje ka levo */
     border-radius: 10px;
-
+    margin-left: 10%; /* Pomeranje ka levo */
 }
 
-.form_container h2{
-    height: 5vh;
+.form_container h2 {
+    height: auto;
     color: black;
-    font-size: 28px;
+    font-size: 24px; /* Smanjena veličina teksta */
 }
 
-.form_container div{
-    text-align: center;
-    width: 80%;
+.form_container div {
+    text-align: left;
+    width: 100%;
     border-bottom: 1px solid #728651;
-    padding-bottom: 5%;
-    margin-bottom: 5%;
+    padding-bottom: 1%; /* Smanjen padding */
+    margin-bottom: 1%; /* Smanjen margin */
 }
 
-.form_container form{
-    width: 80%;
+.form_container form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.form_container label{
+.form_container label {
     color: black;
 }
 
-.form_container input,textarea{
+.form_container input, textarea, select {
     border-radius: 5px;
-    height: 40px;
-    padding-left: 12px;
-    padding-right: 12px;
+    height: 30px; /* Smanjena visina polja */
+    padding-left: 10px;
+    padding-right: 10px;
     border: 1px solid gray;
+    margin-bottom: 10px; /* Smanjen margin između polja */
 }
 
-.form_container button{
+.form_container button {
     border: none;
-    background-color: rgb(156, 5, 5);
-    border-radius: 90px;
+    background-color: #c8a2c8; /* Nežno lila boja */
+    border-radius: 5px; /* Okrugli uglovi */
     padding: 10px;
-    margin-top: 40px;
+    margin-top: 15px; /* Smanjen razmak od poslednjeg polja */
     color: white;
-    font-size: 17px;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-.form_container button:hover{
+.form_container button:hover {
     text-decoration: none;
-    background-color: rgb(158, 26, 26);
+    background-color: #b689b6; /* Tamnija lila boja pri hover-u */
 }
 
-.line{
+.line {
     width: 100%;
     height: 0.5px;
     background-color: gray;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
-
-.form_container p{
-    margin-top: 6%;
+.form_container p {
+    margin-top: 3%; /* Smanjen razmak između paragrafa */
     color: black;
-    font-size: 17px;
+    font-size: 15px; /* Smanjena veličina teksta */
 }
 
-.form_container a{
+.form_container a {
     text-decoration: underline;
     color: #728651;
     margin-bottom: 5%;
@@ -87,8 +88,7 @@
     transition: color 0.3s;
 }
 
-
-.form_container a:hover{
+.form_container a:hover {
     text-decoration: underline;
     color: #384227;
 }
@@ -99,45 +99,45 @@ input[type="file"] {
 
 .custom-file-upload {
     display: inline-block;
-    padding: 10px 12px;
+    padding: 8px 10px; /* Smanjen padding za bolji izgled */
     cursor: pointer;
     color: white;
+    background-color: #c8a2c8; /* Nežno lila boja */
     border-radius: 5px;
     border: 1px solid grey;
+    transition: background-color 0.3s ease;
 }
 
 .custom-file-upload:hover {
-    border: 1px solid rgb(158, 26, 26);
+    background-color: #b689b6; /* Tamnija lila boja pri hover-u */
+    border: 1px solid #b689b6;
 }
 
-
-
-@media (max-width:767px){
-    .form_container{
+@media (max-width: 767px) {
+    .form_container {
         width: 90%;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-    .form_container{
-        width:50%;
-        height: 40vh;
+    .form_container {
+        width: 50%;
+        height: auto;
     }
 
-    .form_container h2{
-        height: 5vh;
-        font-size: 28px;
+    .form_container h2 {
+        font-size: 24px;
     }
 
-    .form_container div{
-        height: 5vh;
+    .form_container div {
+        height: auto;
         width: 100%;
         padding-bottom: 0px;
     }
 }
 
-@media (width:1024px){
-    .form_container{
-        width:40%;
+@media (min-width: 1024px) {
+    .form_container {
+        width: 35%; /* Smanjena širina forme za veće ekrane */
     }
 }

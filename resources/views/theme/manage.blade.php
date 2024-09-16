@@ -3,11 +3,11 @@
 
     @unless ($themes->isEmpty())
     <div class="manage_container" style="height: 66vh">
-        <h1 class="heading">Upravljanje temama</h1>
+        <h1 class="heading">Upravljanje oglasima</h1>
         <table>
             <thead>
                 <tr>
-                    <th>Teme</th>
+                    <th>Oglasi</th>
                     <th class="actions">Opcije</th>
                 </tr>
             </thead>
@@ -16,11 +16,11 @@
                 <tr class="theme_rows">
                     <td ><a href="/themes/{{$theme->id}}" class="theme-name">{{$theme->title}}</a></td>
                     <td class="actions">
-                        <a href="/themes/{{$theme->id}}/edit" class="edit-button"><i class="fa-solid fa-pencil" style="padding-right: 5px"></i>Uredi</a>
+                        <a href="/themes/{{$theme->id}}/edit" class="edit-button"  style="padding-right: 5px">Uredi</a>
                         <form style="display: inline;" method="POST" action="/themes/{{$theme->id}}">
                             @csrf
                             @method('DELETE')
-                            <button class="delete-button"><i class="fa-solid fa-trash" style="padding-right: 5px"></i>Izbriši</button>
+                            <button class="delete-button" style="padding-right: 5px">Izbriši</button>
                         </form>
                     </td>
                 </tr>
@@ -32,7 +32,7 @@
 
     @else
     <div class="no_theme">
-        <p>Trenutno nemate ni jednu započetu temu.</p>
+        <p>Trenutno nemate ni jedan postavljen oglas.</p>
     </div>
     @endunless
 

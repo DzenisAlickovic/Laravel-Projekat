@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="{{ asset('css/partials/search.css') }}">
         <form action="" method="GET">
             <div class="search-container">
-                <input type="text" placeholder="Pretraži teme.." name="search">
+                <input type="text" placeholder="Pretraži oglase" name="search">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </form>
@@ -41,9 +41,10 @@
                         <x-theme-card :theme="$theme" />
                     @endforeach
                 @else
-                    <div>
-                        <p>Nema odobrenih tema</p>
-                    </div>
+                <div style="margin-left: 700px; font-style: italic; font-weight: bold;">
+    <p>Nema objavljenih oglasa</p>
+</div>
+
                 @endunless
             </div>
 

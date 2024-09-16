@@ -1,6 +1,6 @@
-.body{
+body {
     width: 100%;
-    }
+}
 
 .theme_Body {
     display: flex;
@@ -9,28 +9,26 @@
     align-items: left;
     width: 65%;
     margin: 0 auto;
-    }
+}
 
-
-  .theme_Container {
+.theme_Container {
     background-color: whitesmoke;
     width: 100%;
-    height: 280px;
+    height: auto; /* Da bi se prilagodilo sadržaju */
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     padding: 1%;
-    border-radius:5px;
-    box-shadow:0 0 15px rgba(0, 0, 0, 0.2);
-  }
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
 
-  .anketa{
-
+.anketa {
     margin-bottom: 2%;
-  }
+}
 
-  .anketa_container{
+.anketa_container {
     background-color: white;
     width: 100%;
     min-height: 30px;
@@ -39,148 +37,179 @@
     flex-direction: row;
     padding: 1%;
     padding-top: 3%;
-    border-radius:5px;
-    box-shadow:0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     justify-content: space-between;
-  }
+}
 
-  .anketa_container p{
+.anketa_container p {
     justify-content: left;
     color: black;
     font-size: 17px;
     align-items: left;
     padding: 5px;
-  }
-
-  .new-poll{
+}
+.new-poll {
     height: 50px;
-    border:1px solid green;
+    border: 1px solid green;
     border-radius: 15px;
     padding: 10px;
     margin-top: 0;
     margin-right: 0;
     font-weight: bold;
     color: black;
-  }
+    background-color: white; /* Osiguravamo belu pozadinu */
+}
 
-  .new-poll:hover{
-    color: black;
-  }
+.new-poll:hover {
+    background-color: #a8d08d; /* Svetlo zelena boja na hover */
+    color: white; /* Bela boja teksta na hover */
+    cursor: pointer; /* Menjanje kursora na hover */
+    border: none; /* Uklonjen okvir na hover */
+    text-decoration: none;
+}
 
-  .followers-button{
-    color:black;
-    border: 1px solid black;
-    padding: 3%;
+
+.followers-button {
+    color: white;
+    background-color: #a8d08d; /* Nežna zelena boja */
+    border: none;
+    padding: 10px;
     border-radius: 5px;
     width: 110px;
     font-weight: bold;
-    background-color:beige;
-  }
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
 
-  .followers-button:hover{
-    color: black;
-  }
+.followers-button:hover {
+    background-color: #8cbf6b; /* Tamnija zelena pri hoveru */
+    text-decoration: none;
+    color:white;
+}
 
-
-  .theme_Image {
+.theme_Image {
     width: 50%;
     padding-right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-  }
+}
 
-  .line{
+.line {
     width: 1px;
     height: 220px;
     background-color: grey;
     margin-top: 2%;
 }
 
-  .theme_Info {
+.theme_Info {
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    align-items: left;
+    justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
     padding-left: 20px;
     position: relative;
-  }
+}
 
-
-  .theme_Title {
+.theme_Title {
     font-weight: bold;
     font-style: normal;
     color: black;
     padding-top: 3%;
     font-size: 17px;
-  }
+}
 
-
-
-  .theme_Description {
+.theme_Description {
     color: black;
     padding-top: 3%;
     padding-bottom: 5%;
+}
 
-  }
-
-
-  .theme_Details{
+.theme_Details {
     color: black;
-  }
+}
 
-  .theme_Details span{
+.theme_Details span {
     font-style: oblique;
-  }
+}
 
-
-
-  .theme_button_comment {
-    padding: 3%;
-    color: black;
-    background-color: white;
-    border: 1px solid green;
+.theme_button_comment {
+    padding: 10px;
+    color: white;
+    background-color: #c8a2c8; /* Nežna lila boja */
+    border: none;
     border-radius: 5px;
     font-weight: bold;
     width: 120px;
     margin-right: 10px;
-
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Uklonjen underline */
 }
 
-.follow{
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin-bottom: 10px;
-    margin-right: 10px;
-
+.theme_button_comment:hover {
+    background-color: #b689b6; /* Tamnija lila pri hoveru */
+    text-decoration: none; /* Bez underline */
+    color: white;
 }
 
-.follow_button{
-    padding: 6%;
-    color: black;
-    background-color:rgb(217, 217, 241);
+.theme_button_comment:focus {
+    outline: none; /* Uklanja outline */
+    border: 2px solid #b689b6; /* Border na klik */
+}
+
+.btn-danger {
+    padding: 10px;
+    color: white;
+    background-color: #e6a3a3; /* Nežna crvena boja za "Otprati" */
+    border: none;
     border-radius: 5px;
     font-weight: bold;
-    width: 110px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Uklonjen underline */
 }
 
+.btn-danger:hover {
+    background-color: #c82333; /* Tamnija crvena pri hoveru */
+    text-decoration: none; /* Uklonjen underline pri hoveru */
+}
 
+.btn-danger:focus {
+    outline: none; /* Uklanja outline */
+    border: 2px solid #c82333; /* Border na klik */
+}
 
-  .theme_button_comment:hover{
-    color: black;
-  }
+.follow_button {
+    padding: 10px;
+    color: white;
+    background-color: #a8d08d; /* Nežna zelena boja za "Zaprati" dugme */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    width: 110px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Uklonjen underline */
+}
 
+.follow_button:hover {
+    background-color: #8cbf6b; /* Tamnija zelena pri hoveru */
+    text-decoration: none; /* Uklonjen underline */
+    color: white;
+}
 
-  .comments{
+.follow_button:focus {
+    outline: none; /* Uklanja outline */
+    border: 2px solid #8cbf6b; /* Border na klik */
+}
+
+.comments {
     width: 100%;
-  }
+}
 
-  .comment_card{
+.comment_card {
     background-color: white;
     margin-bottom: 10px;
     min-height: 30vh;
@@ -189,38 +218,44 @@
     justify-content: center;
     padding: 1%;
     border-radius: 5px;
-    box-shadow:0 0 10px rgba(0, 0, 0, 0.2);
-  }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
-  .comment_text{
+.comment_text {
     text-align: left;
     color: black;
     font-style: italic;
     font-size: 28px;
     margin-top: 60px;
-  }
+}
 
-  .comment_left{
+.comment_left {
     width: 22%;
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-  }
+}
 
-  .comment_right{
+.comment_right {
     width: 78%;
     padding: 15px;
-  }
+}
 
-
-  .back{
+.back {
     color: black;
     text-decoration: underline;
     margin-top: 30px;
     margin-bottom: 30px;
-    }
+}
 
-    .back:hover{
+.back:hover {
     color: grey;
-    }
+}
+
+.follow {
+    display: flex;
+    justify-content: flex-start; /* Dugmad postavljena uz početak */
+    gap: 15px; /* Razmak između dugmadi */
+    margin-top: 20px;
+}

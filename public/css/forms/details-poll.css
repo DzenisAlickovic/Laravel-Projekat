@@ -40,6 +40,13 @@
     position: absolute;
     top: 20px;
     right: 20px;
+    background-color: #a8d08d; /* Svetlo zelena */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.close_poll:hover {
+    background-color: #8cbf6b; /* Tamnija zelena na hover */
+    color: white;
 }
 
 .anketa-details label {
@@ -54,19 +61,19 @@
     font-weight: bold;
 }
 
-
-.submit{
+.submit {
     border: none;
-    background-color: rgb(156, 5, 5);
+    background-color: #c8a2c8; /* Svetlo lila boja */
     border-radius: 90px;
     padding: 12px;
     color: white;
     font-size: 17px;
     width: 150px;
     margin: 0 auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.submit:hover{
-    background-color: rgb(158, 26, 26);
+.submit:hover {
+    background-color: #b689b6; /* Tamnija lila na hover */
     color: white;
 }

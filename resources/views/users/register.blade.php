@@ -5,7 +5,7 @@
 
 
             <a href="{{ url()->previous() }}" style="color:black">Nazad</a>
-            <span style="font-size: 58px; padding-bottom:10px; color:black">
+            <span style="font-size: 48px; padding-bottom:10px; color:black">
                 Registruj se
             </span>
             <label style="color: black; font-size:20px">Napravi novi korisnički nalog</label>
@@ -13,7 +13,7 @@
 
             <form  method="post" action="/users" enctype="multipart/form-data">
 
-                <span class="line" style="margin-bottom: 20px"></span>
+                <span class="line" style="margin-bottom: 5px"></span>
 
                 @csrf
                 <label for="name">Korisničko ime</label>
@@ -132,5 +132,4 @@
             </form>
         </div>
     </div>
-
 </x-layout>

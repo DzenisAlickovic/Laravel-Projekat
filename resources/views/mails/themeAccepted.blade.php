@@ -1,11 +1,11 @@
 @component('mail::message')
-# Vaša tema je prihvaćena
+# Vaš oglas je prihvaćen
 
 Poštovani,
 
-Drago nam je da vas obaveštavamo da je vaša tema prihvaćena.
+Drago nam je da vas obaveštavamo da je vaš oglas prihvaćen.
 
-Hvala vam što doprinosite našoj platformi svojim idejama i radom.
+Hvala vam što doprinosite našoj.
 
 S poštovanjem,<br>
 {{ config('app.name') }}

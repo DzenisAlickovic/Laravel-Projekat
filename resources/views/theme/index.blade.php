@@ -10,15 +10,15 @@
                     $currentThemesCount = app('App\Http\Controllers\ThemeController')->countThemes($moderatorId);
                 @endphp
 
-                <label style="padding-bottom: 50px; color:black;">U cilju održavanja kvaliteta i raznovrsnosti sadržaja, moderatorima je dozvoljeno dodavanje najviše dve teme.
+                <label style="padding-bottom: 50px; color:black;">U cilju održavanja kvaliteta i raznovrsnosti sadržaja, moderatorima je dozvoljeno dodavanje najviše dva oglasa.
                     <br><br>Zahvaljujemo na razumevanju i podršci.</label>
 
                 @if ($currentThemesCount < $maxThemesAllowed)
                     <div class="create_new_theme">
-                        <a href="/themes/create"><i class="fa-solid fa-circle-plus" style="padding-right: 5px; color:green"></i>Započni novu temu</a>
+                        <a href="/themes/create"><i style="padding-right: 5px; color:green"></i>Postavi novi oglas</a>
                     </div>
                 @else
-                    <p style="font-weight: bold">Već ste započeli maksimalni broj tema.</p>
+                    <p style="font-weight: bold">Već ste postavili maximalan broj oglasa.</p>
                 @endif
             @endif
         </div>
@@ -29,7 +29,7 @@
                 @endforeach
             @else
             <div class="no_theme">
-                <p>Trenutno nemate ni jednu započetu temu.</p>
+                <p>Trenutno nemate ni jedan postavljen oglas.</p>
             </div>
             @endunless
 

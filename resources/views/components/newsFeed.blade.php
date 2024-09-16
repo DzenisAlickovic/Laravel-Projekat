@@ -9,7 +9,7 @@
         <form action="/delete-news-feed/{{$item->id}}" method="POST">
             @csrf
             @method('DELETE')
-            <button class="delete_newsFeed" type="submit"><i class="fa-solid fa-trash"></i> Izbriši</button>
+            <button class="delete_newsFeed" type="submit"> Izbriši</button>
         </form>
     @endif
     @endauth

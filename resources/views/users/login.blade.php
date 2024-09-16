@@ -4,10 +4,10 @@
         <div class="form_container">
             <a href="{{ url()->previous() }}" style="color:black">Nazad</a>
 
-            <span style="font-size: 58px; padding-bottom:20px; color:black">
+            <span style="font-size: 48px; padding-bottom:10px; color:black">
                 Prijavite se ili <br>registrujte
             </span>
-            <label style="color: grey; padding-bottom:20px">Vaša sigurnost je naš prioritet. <br>Sve podatke štitimo uz najviše standarde bezbednosti.</label>
+            <label style="color: grey; padding-bottom:5px">Želite da pratite najnovije oglase a pritom i da  uštedite. <br>Kod nas je sve po dogovoru.</label>
             <form  method="post" action="/users/authenticate">
                 @csrf
 
@@ -34,10 +34,9 @@
         </div>
         <div class="sideDiv">
             <label style="font-size: 18px; font-weight:bold">Jedna prijava - čitav niz usluga</label><br>
-            <label><i class="fa-solid fa-check"></i> Diskutujte o svemu što Vas zanima</label>
-            <label><i class="fa-solid fa-check"></i> Podelite svoje iskustvo sa našom zajednicom</label>
-            <label><i class="fa-solid fa-check"></i> Nudi inspiraciju, savete i podršku za maksimalno
-                                                     iskorišćenje naših usluga i unapređenje vašeg iskustva.</label>
+           <p> Diskutujte o svemu što Vas zanima</p>
+           <p> Podelite svoje znanje o proizvodima koji se nude</p>
+           <p>Ponudi i ti svoj proizvod! Digitalni oglasi su tu a vas!</p>
         </div>
 </div>
 </x-layout>

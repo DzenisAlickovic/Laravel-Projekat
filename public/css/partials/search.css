@@ -1,21 +1,22 @@
 .search-container {
     text-align: center;
     padding: 10px;
-    background-color: #375f3b;
+    background-color: transparent;
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4);
     margin-bottom: 40px;
 }
 
 .search-container input[type="text"] {
-    width: 25%;
-    padding: 8px;
+    width: 10%;
+    padding: 6px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+    border-radius: 8px;
+    margin-right: 12S00px;
 }
 
 .search-container button[type="submit"] {
     padding: 8px;
-    background-color: white ;
+    background-color: transparent ;
     /* color: #375f3b; */
     color: black;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
@@ -24,5 +25,6 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-right: 1000px;
 }
 

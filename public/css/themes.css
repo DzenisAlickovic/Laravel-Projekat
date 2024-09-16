@@ -2,7 +2,7 @@
 .themes_Body {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   padding: 15px;
   margin-bottom: 80px;
 }
@@ -12,9 +12,11 @@
   width: 20%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   min-height: fit-content;
+  font-style: italic;
   border-radius: 5px;
   padding: 1%;
   background-color: white;
+  margin-right:150px;
 }
 
 
@@ -54,16 +56,35 @@
   padding: 5px;
 }
 
-.add-news-feed-form button{
-    border: 1px solid green;
-    background-color: white;
-    color:black;
+.add-news-feed-form button {
+    background-color: #a8d08d; /* Svetlo zelena boja */
+    color: white;
+    padding: 10px 20px;
     border-radius: 5px;
-    align-self: center;
-    margin: 5%;
-    padding: 2%;
     font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center; /* Centriraj horizontalno */
+    align-items: center; /* Centriraj vertikalno */
+    margin-top: 10px;
+    width: 100%; /* Dodato kako bi dugme bilo širine roditeljskog elementa */
+    max-width: 256px; /* Maksimalna širina dugmeta ako želiš da ograničiš širinu */
+    text-align: center; /* Osiguraj da je tekst centriran */
 }
+
+.add-news-feed-form button:hover {
+    background-color: #8cbf6b; /* Tamnija zelena boja na hover */
+    color: white;
+    cursor: pointer;
+}
+
+/* Uklanjanje ikone plus ako je prisutna */
+.add-news-feed-form i {
+    display: none; /* Sakriva ikonu plus */
+}
+
+
 
 
 
@@ -183,10 +204,25 @@
 
 }
 
+.create_new_theme a {
+    background-color: #a8d08d; /* Svetlo zelena boja */
+    color: white; /* Bele boje teksta */
+    border: none;
+    border-radius: 5px;
+    align-self: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Blaga senka */
+}
 
-.create_new_theme{
-    display: flex;
-    justify-content: center;
+.create_new_theme a:hover {
+    background-color: #8cbf6b; /* Tamnija zelena boja na hover */
+    color: white; /* Bele boje teksta */
+    text-decoration: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Veća senka na hover */
 }
 
 
@@ -203,13 +239,6 @@
     color: black;
     font-weight: bold;
 }
-
-
-.create_new_theme a:hover {
-    color: black;
-    text-decoration: underline;
-}
-
 
 
 

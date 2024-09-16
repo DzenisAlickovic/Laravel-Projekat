@@ -1,138 +1,135 @@
-.form_body{
+.form_body {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Pomera elemente u levo */
     min-height: 50vh;
 }
 
-
-.form_container{
+.form_container {
     width: 42%;
     padding: 40px;
     display: flex;
     flex-direction: column;
-    align-items: left;
-    border-radius: 2px;
+    align-items: flex-start; /* Poravnanje ka levo */
+    border-radius: 5px; /* Blago zaobljeni uglovi */
     min-height: 90vh;
-
-
+    background-color: white; /* Bela pozadina za bolji kontrast */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Blaga senka */
 }
 
-.sideDiv{
+.sideDiv {
     width: 25%;
     height: 350px;
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: left;
-    margin-top: 10%;
+    align-items: flex-start;
+    margin-top: 200px; /* Pomeranje ka dole */
+    margin-left: 200px; /* Pomeranje desno */
     background-color: whitesmoke;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
+    border-radius: 5px;
 }
 
-.form_container h2{
+
+.form_container h2 {
     height: 5vh;
     color: black;
     font-size: 28px;
 }
 
-.form_container div{
-    text-align: center;
-    width: 80%;
+.form_container div {
+    text-align: left; /* Poravnanje teksta ka levo */
+    width: 100%; /* Puna širina */
     margin-bottom: 20px;
     border-bottom: 1px solid #728651;
     padding-bottom: 10%;
 }
 
-.line{
+.line {
     width: 100%;
     height: 0.5px;
     background-color: gray;
     margin-top: 5%;
 }
 
-
-.form_container form{
-    width: 80%;
+.form_container form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.form_container label{
+.form_container label {
     color: black;
     margin-bottom: 3%;
 }
 
-.form_container input,textarea{
+.form_container input, textarea {
     border-radius: 5px;
     height: 40px;
     padding-left: 12px;
     padding-right: 12px;
     border: 1px solid gray;
+    margin-bottom: 10px; /* Dodato malo prostora između polja */
 }
 
-.form_container button{
+.form_container button {
     border: none;
-    background-color: rgb(156, 5, 5);
+    background-color: #c8a2c8; /* Nežna lila boja za dugme */
     border-radius: 90px;
     padding: 12px;
     color: white;
     font-size: 17px;
-
+    width: 100%; /* Dugme sada zauzima punu širinu */
+    transition: background-color 0.3s ease;
 }
 
-.form_container button:hover{
-    background-color: rgb(158, 26, 26);
+.form_container button:hover {
+    background-color: #b689b6; /* Tamnija lila pri hover-u */
     text-decoration: none;
 }
 
-
-.form_container p{
+.form_container p {
     margin-top: 5%;
     color: black;
     font-size: 17px;
 }
 
-.form_container a{
+.form_container a {
     text-decoration: underline;
-    color: #ABCA79;
+    color: #c8a2c8; /* Nežna lila boja za linkove */
     margin-bottom: 5%;
     cursor: pointer;
     transition: color 0.3s;
 }
 
-
-.form_container a:hover{
+.form_container a:hover {
     text-decoration: underline;
-    color: #384227;
+    color: #b689b6; /* Tamnija lila pri hover-u */
 }
 
-
-@media (max-width:767px){
-    .form_container{
+@media (max-width: 767px) {
+    .form_container {
         width: 90%;
     }
 }
 
 @media (min-width: 800px) and (max-width: 900px) {
-    .form_container{
-        width:50%;
+    .form_container {
+        width: 50%;
         height: 70vh;
     }
 
-    .form_container h2{
+    .form_container h2 {
         height: 5vh;
         font-size: 28px;
     }
 
-    .form_container div{
-        height: 5vh;
+    .form_container div {
+        height: auto;
         width: 80%;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
         margin-top: 10px;
-
     }
-
 }

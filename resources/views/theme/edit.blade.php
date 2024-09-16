@@ -3,7 +3,7 @@
     <div class="form_body">
         <div class="form_container">
             <a href="{{ url()->previous() }}" style="color:black; text-decoration:underline">Nazad</a>
-            <p>Izmeni temu</p>
+            <p>Izmeni oglas</p>
 
             <div style="width: 80%; height:0.5px; background-color:grey;margin-bottom: 50px;"></div>
 

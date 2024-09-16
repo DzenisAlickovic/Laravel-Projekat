@@ -1,48 +1,57 @@
-
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
-        Schema::table('comments', function (Blueprint $table) {
-            // Prvo uklonimo strani ključ
-            $table->dropForeign(['course_id']);
+        // Proveri da li tabela 'themes' već postoji, i preimenuj ako ne postoji
+        if (!Schema::hasTable('themes')) {
+            Schema::rename('courses', 'themes');
+        }
 
-            // Promenimo ime kolone
-            $table->renameColumn('course_id', 'theme_id');
-
-            // Dodamo novi strani ključ
-            $table->foreign('theme_id')->references('id')->on('themes');
+        Schema::table('themes', function (Blueprint $table) {
+            // Proveri da li kolone postoje pre nego što ih pokušaš obrisati
+            if (Schema::hasColumn('themes', 'tags')) {
+                $table->dropColumn('tags');
+            }
+            if (Schema::hasColumn('themes', 'duration')) {
+                $table->dropColumn('duration');
+            }
+            if (Schema::hasColumn('themes', 'price')) {
+                $table->dropColumn('price');
+            }
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {
-        Schema::table('comments', function (Blueprint $table) {
-            // Prvo uklonimo strani ključ
-            $table->dropForeign(['theme_id']);
+        // Vraćanje nazad tabele iz 'themes' u 'courses'
+        if (Schema::hasTable('themes')) {
+            Schema::rename('themes', 'courses');
+        }
 
-            // Promenimo ime kolone nazad
-            $table->renameColumn('theme_id', 'course_id');
-
-            // Dodamo strani ključ natrag
-            $table->foreign('course_id')->references('id')->on('courses');
+        Schema::table('courses', function (Blueprint $table) {
+            // Ponovno dodavanje kolona ako su uklonjene
+            if (!Schema::hasColumn('courses', 'tags')) {
+                $table->string('tags');
+            }
+            if (!Schema::hasColumn('courses', 'duration')) {
+                $table->decimal('duration');
+            }
+            if (!Schema::hasColumn('courses', 'price')) {
+                $table->float('price');
+            }
         });
     }
 };

@@ -15,7 +15,7 @@
 
                 <div class="form-group">
                     <p style="font-weight: bold; font-size: 20px">Pitanje</p>
-                    <label style="color: grey; font-style:italic; padding-bottom: 10px; font-weight:100">Ovde možete postaviti pitanje vašoj zajednici na zadatu temu.</label>
+                    <label style="color: grey; font-style:italic; padding-bottom: 10px; font-weight:100">Ovde možete postaviti pitanje svim korisnicima.</label>
                     <textarea class="form-control" id="question" name="question" rows="3" required></textarea>
                 </div>
 

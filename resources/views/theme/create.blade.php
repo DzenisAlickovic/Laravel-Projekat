@@ -4,7 +4,7 @@
         <div class="form_container">
 
             <a href="{{ url()->previous() }}" style="color:black; text-decoration:underline">Nazad</a>
-            <p>Kreiraj novu temu</p>
+            <p>Kreiraj novi oglas</p>
 
             <div style="width: 80%; height:0.5px; background-color:grey;margin-bottom: 50px;"></div>
 

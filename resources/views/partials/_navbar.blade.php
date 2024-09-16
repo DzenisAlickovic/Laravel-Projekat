@@ -8,89 +8,68 @@
 
 <nav class="navbar">
 
-        <span style="display: flex; align-items: center;">
-            {{-- <a href="/" class="logo" style="display: flex; align-items: center;">
-                <img src="/image/eco.png" width="50px" style="margin-right: 5px; max-width: none;">
-                EkoAktivisti
-            </a> --}}
-            <span class="logo" style="display: flex; align-items: center;">
-                <img src="/image/eco.png" width="50px" style="margin-right: 5px; max-width: none;">
-                EkoAktivisti
-            </span>
+    <span style="display: flex; align-items: center;">
+        <span class="logo" style="display: flex; align-items: center;">
+            <img src="/image/Logo zeleni.png" width="50px" style="margin-right: 5px; max-width: none;">
+            DigiOglasi
         </span>
+    </span>
 
-        <ul class="nav-links">
+    <ul class="nav-links">
 
-            <div class="padding">
-                @guest
-                    <a href="/" style="padding-top:10px; padding-right: 20px;">Početna</a>
-                @endguest
-
-                @auth
-
-                <li><a href="/"> Početna</a></li>
-
-                @if(auth()->user()->role == 'korisnik')
-                    <li><a href="{{ route('followed-themes.index') }}">Teme</a></li>
+        <div class="account">
+            @auth
+            <li class="user-info">
+                @if (auth()->user()->picture != "null")
+                    <img src="{{ asset('storage/' . auth()->user()->picture) }}" alt="{{ auth()->user()->name }}" class="user-img">
+                @else
+                    <i class="fa-solid fa-user" style="margin-right:5px"></i>
                 @endif
 
-                @if(auth()->user()->role == 'moderator')
-                    <li><a href="/themes"> Moje teme</a></li>
-                    <li><a href="/themes/manage"> Upravljaj temama</a></li>
-                @endif
+            <li id="userDropdown" class="dropdown">
+                <a href="#" role="button" id="userDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="username">
+                    <span class="username">{{ auth()->user()->name }}</span>
+                </a>
 
-                @if (auth()->user()->role == 'admin')
-                    <li><a href="/users/manage"> Korisnici</a></li>
-                    <li><a href="/users/requests"> Zahtevi</a></li>
-                @endif
-
-
-                <li id="userDropdown" class="dropdown">
-                    <a href="#" role="button" id="userDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex; align-items: center;">
-
-                        @if (auth()->user()->picture != "null")
-                            <img src="{{ asset('storage/' . auth()->user()->picture) }}" alt="{{ auth()->user()->name }}" style="width:30px;height:30px;border-radius:80px; margin-right:5px">
-                        @else
-                            <i class="fa-solid fa-user" style="margin-right:5px"></i>
-                        @endif
-                        <span style="color: rgb(4, 40, 4); font-weight: bold;">{{ auth()->user()->name }}</span>
+                <div class="dropdown-menu" aria-labelledby="userDropdownMenuLink">
+                    <a class="dropdown-item" style="color: black" href="/users/{{ auth()->user()->id }}/resetPassword">
+                        Promeni šifru
                     </a>
 
-                    <div class="dropdown-menu" aria-labelledby="userDropdownMenuLink">
-                        @auth
-                            @if (auth()->user()->role === 'korisnik')
-                                <form  action="/apply-for-moderator" method="POST" class="mod">
-                                    @csrf
-                                    <button ><i class="fas fa-user" style="padding-right: 5px;"></i>Prijavi se za moderatora</button>
-                                </form>
-                            @endif
-                        @endauth
-
-                        <a class="dropdown-item" style="color: black" href="/users/{{auth()->user()->id}}/resetPassword">
-                            <i class="fas fa-key" style="padding-right: 5px"></i>Promeni šifru</a>
-
-                        <form action="/logout" method="POST">
-                            @csrf
-                            <button type="submit" class="dropdown-item">
-                                <i class="fas fa-sign-out-alt" style="padding-right: 5px"></i><span  class="logout" >Odjavi se</span>
-                            </button>
-                        </form>
-
-                    </div>
-                </li>
-            </div>
-
-
-            @else
-                <div class="account">
-                    {{-- <li><a href="/register" style="color: rgb(69, 62, 62)"><i class="fa-solid fa-user-plus"></i> Registruj se</a></li> --}}
-                    <li><a href="/login" style="color: rgb(69, 62, 62); font-weight:bold"><i class="fa-solid fa-arrow-right-to-bracket" style="padding-right: 5px;"></i>Prijavi se</a></li>
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <button type="submit" class="dropdown-item">Odjavi se</button>
+                    </form>
                 </div>
+            </li>
+
+            <li><a href="/" class="home-button">Početna</a></li>
+
+            @if(auth()->user()->role == 'korisnik')
+                <li><a href="{{ route('followed-themes.index') }}" class="home-button">Oglasi</a></li>
+            @endif
+
+            @if(auth()->user()->role == 'moderator')
+                <li><a href="/themes" class="home-button">Moji oglasi</a></li>
+                <li><a href="/themes/manage" class="home-button">Upravljanje oglasima</a></li>
+            @endif
+
+            @if (auth()->user()->role == 'admin')
+                <li><a href="/users/manage" class="home-button">Korisnici</a></li>
+                <li><a href="/users/requests" class="home-button">Zahtevi</a></li>
+            @endif
+
             @endauth
 
-        </ul>
+            @guest
+            <li><a href="/" class="home-button">Početna</a></li> <!-- Vrati Početna za goste -->
+            <li><a href="/login" class="login-button">Prijavi se</a></li>
+            @endguest
+        </div>
 
+    </ul>
 </nav>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var userDropdown = document.getElementById('userDropdown');

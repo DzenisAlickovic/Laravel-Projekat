@@ -9,9 +9,54 @@
     display: flex;
     position: absolute;
     flex-direction: column;
+    font-style: italic;
 }
 
 
 .main-content {
     flex: 1;
+}
+.main-content {
+    background-image: url("/image/notepad-3297994_1280.jpg"); /* Putanja do tvoje slike */
+    background-size: cover;  /* Pokriva ceo element */
+    background-position: center; /* Centriraj sliku */
+    background-repeat: no-repeat; /* Bez ponavljanja slike */
+    min-height: 100vh; /* Visina da pokrije celu stranicu */
+    padding: 20px; /* Daje malo razmaka oko sadržaja */
+    margin-top: 1px;
+}
+
+
+/* Responsive styling */
+@media (max-width: 1200px) {
+    .body {
+        background: linear-gradient(
+            to right,
+            rgb(231, 231, 244),
+            rgb(193, 242, 193)
+        );
+        background-size: cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .body {
+        background: linear-gradient(
+            to top,
+            rgb(46, 46, 147),
+            rgb(193, 242, 193)
+        );
+        background-size: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    .body {
+        background: linear-gradient(
+            to top,
+            rgb(46, 46, 147),
+            rgb(231, 231, 244)
+        );
+        background-size: cover;
+    }
 }

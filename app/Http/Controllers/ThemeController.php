@@ -37,18 +37,27 @@ class ThemeController extends Controller
 
 
     //Count Themes
+
     public function countThemes($moderatorId)
     {
-        return Themes::where('user_id', $moderatorId)->count();
+        // Brojimo samo neodobrene oglase, jer oni zauzimaju mesto
+        return Themes::where('user_id', $moderatorId)
+                     ->where('approved', false)
+                     ->count();
     }
 
 
 
     // Get All Themes
+
     public function index(){
+        // Prikazuje samo oglase koji nisu odobreni
         return view('theme.index', [
-            'themes' => Themes::where('user_id', auth()->id())->latest()->filter(request(['search']))
-                ->paginate(3),
+            'themes' => Themes::where('user_id', auth()->id())
+                               ->where('approved', false) // Filtrira oglase koji nisu odobreni
+                               ->latest()
+                               ->filter(request(['search']))
+                               ->paginate(3),
             'newsFeed' => NewsFeed::latest()->get()
         ]);
     }
@@ -99,10 +108,10 @@ class ThemeController extends Controller
 
         $themeTitle = $formFields['title'];
         NewsFeed::create([
-            'content' => auth()->user()->name . " je kreirao/la novu temu. Tema je:  '$themeTitle'",
+            'content' => auth()->user()->name . " je kreirao/la novi oglas. Oglas je:  '$themeTitle'",
         ]);
 
-        return redirect('/')->with('message','Tema je poslata na odobrenje administratoru.');
+        return redirect('/')->with('message','Oglas je poslata na odobrenje administratoru.');
     }
 
 
@@ -140,10 +149,10 @@ class ThemeController extends Controller
 
         $themeTitle = $formFields['title'];
         NewsFeed::create([
-            'content' => auth()->user()->name . " je izmenio/la temu '$themeTitle'",
+            'content' => auth()->user()->name . " je izmenio/la oglas '$themeTitle'",
         ]);
 
-        return back()->with('message', 'Tema uspešno ažurirana!');
+        return back()->with('message', 'Oglas uspešno ažuriran!');
     }
 
 
@@ -165,7 +174,7 @@ class ThemeController extends Controller
 
         $theme->delete();
 
-        return redirect('/')->with('message', "Tema uspešno obrisana!");
+        return redirect('/')->with('message', "Oglas uspešno obrisan!");
     }
 
 
@@ -173,11 +182,11 @@ class ThemeController extends Controller
     // Reject theme
     public function rejectTheme(Themes $theme)
     {
-        DB::table('themes')->where('id', $theme->id)->update(['approved' => 'reject']);
+        DB::table('themes')->where('id', $theme->id)->update(['approved' => '0']);
 
         //Mail::to($theme->user->email)->send(new ThemeRejected($theme));
 
-        return redirect()->back()->with('message', 'Tema je odbijena.');
+        return redirect()->back()->with('message', 'Oglas je odbijen.');
     }
 
 
@@ -185,12 +194,23 @@ class ThemeController extends Controller
     // Accetp theme
     public function acceptTheme(Themes $theme)
     {
-        DB::table('themes')->where('id', $theme->id)->update(['approved' => 'true']);
+        // Postavi status 'approved' na true, tj. oglas je odobren
+        $theme->approved = true;
+        $theme->save();
+
+        // Oslobodi mesto moderatoru kada je oglas odobren
+        $moderatorId = $theme->user_id;
+
+        // Proveri trenutni broj oglasa ovog moderatora
+        $currentThemesCount = $this->countThemes($moderatorId);
+
+        // Pošalji poruku moderatoru putem emaila ili samo vrati poruku u sesiju
+        return redirect()->back()->with('message', 'Oglas je zavrsen, a moderatoru je sada slobodno mesto za novi oglas.');
+    }
 
         // Mail::to($theme->user->email)->send(new ThemeAccepted($theme));
 
-        return redirect()->back()->with('message', 'Tema je prihvaćena.');
-    }
+
 
 
 
@@ -223,9 +243,13 @@ class ThemeController extends Controller
 
 
     //Manage Themes
-    public function manage(){
 
-        return view('theme.manage',['themes' => auth()->user()->themes()->get()]);
+    public function manage()
+    {
+        // Prikaz samo neodobrenih oglasa moderatora
+        return view('theme.manage', [
+            'themes' => auth()->user()->themes()->where('approved', false)->get() // Prikaz samo neodobrenih oglasa
+        ]);
     }
 
 
@@ -235,7 +259,7 @@ class ThemeController extends Controller
         return view('theme.create-poll', compact('theme'));
     }
 
-    
+
     public function storePoll(Request $request, $themeId)
     {
 

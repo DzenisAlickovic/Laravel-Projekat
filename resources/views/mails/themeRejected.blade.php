@@ -1,13 +1,13 @@
 @component('mail::message')
-# Vaša tema je odbijena
+# Vaš oglas je odbijena
 
 Poštovani,
 
 
-Žao nam je što vas obaveštavamo da je vaša tema odbijena.
+Žao nam je što vas obaveštavamo da je vaš oglas odbijena.
 
 
-Molimo vas da pogledate naše smernice i ponovo podnesete temu ako želite.
+Molimo vas da pogledate naše smernice i ponovo pokusate da postavite oglas.
 
 Hvala vam na razumevanju.
 

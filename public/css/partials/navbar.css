@@ -1,36 +1,30 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-
-
 .navbar {
-    background-color: rgb(218, 243, 174);
+    background-color: rgb(60, 121, 133);
     top: 0;
     z-index: 100;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
     height: 110px;
     width: 100%;
-    padding-left: 10%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
-
 
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    margin: 0 auto;
-    padding: 0 20px;
-    background-color: red;
+    width: 100%;
+    padding: 0;
 }
 
 .logo {
     font-size: 24px;
     color: rgb(43, 42, 42);
     text-decoration: none;
-    margin-left: 35%;
+    margin-right: 20px;
 }
+
 .logo img {
     width: auto;
     max-height: 80px;
@@ -41,52 +35,100 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
-    margin-right:3%;
+    align-items: center;
 }
 
 .nav-links li {
-    margin-right: 20px;
+    margin-right: 10px; /* Smanjen razmak između dugmadi */
 }
 
-.nav-links a,button {
-    /* color: white; */
+.nav-links a, .login-button, .home-button {
     color: rgb(43, 42, 42);
     text-decoration: none;
+    font-size: 16px;
     transition: color 0.3s;
 }
 
-.nav-links a:hover,button:hover {
-    text-decoration:underline;
+.nav-links a:hover, .login-button:hover, .home-button:hover {
+    text-decoration:none;
     color: black;
 }
 
-.user{
+.login-button, .home-button {
+    background: linear-gradient(135deg, #59C0A5, #28B7E4);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: none;
+    display: inline-block;
+}
+
+.login-button:hover, .home-button:hover {
+    background: linear-gradient(135deg, #28B7E4, #59C0A5);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.user-info {
     display: flex;
     align-items: center;
-    color: rgb(43, 42, 42);
+    margin-right: 20px;
+}
+
+.user-img {
+    width: 80px; /* Povećaj širinu slike */
+    height: 80px; /* Povećaj visinu slike kako bi bila kvadratna */
+    border-radius: 10px; /* Smanji zaobljenost za kockasti izgled */
+    margin-right: 5px; /* Ostavi razmak između slike i korisničkog imena */
+}
+
+.username {
+    background: linear-gradient(135deg, #59C0A5, #28B7E4); /* Dodaj gradijent */
+    color: black;
+    padding: 6px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: none;
+    display: inline-block;
+}
+
+.username:hover {
+    background: linear-gradient(135deg, #28B7E4, #59C0A5); /* Obrnuti gradijent na hover */
+    color: black;
+    text-decoration: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
 
-.account{
+.account {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
     display: flex;
-    list-style: none;
-    padding: 8px;
-    border-radius:2px;
+    align-items: center;
+}
+
+.dropdown-menu {
     background-color: white;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
 }
 
-.padding{
-    display: flex;
-    list-style: none;
-    padding-top: 10px;
+.dropdown-item {
+    color: black;
+    padding: 8px;
+    transition: background 0.2s;
 }
 
-.logout:hover{
-    text-decoration: underline;
-}
-
-.mod:hover{
-    text-decoration: underline;
-    background-color: rgb(239, 246, 243);
+.dropdown-item:hover {
+    background-color: #f0f0f0;
 }

@@ -1,12 +1,13 @@
+/* Table heading */
 .heading{
     text-align: left;
     color: black;
     font-size: 35px;
     margin-top: 20px;
     margin-bottom: 50px;
-
 }
 
+/* Container for managing themes */
 .manage_container {
     max-width: 80%;
     margin:30px 10%;
@@ -24,8 +25,7 @@
     margin-bottom: 4%;
 }
 
-
-
+/* Table styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -34,21 +34,21 @@ table {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Table header */
+th {
+    background-color: #a8d08d; /* Svetlo zelena boja */
+    color: black;
+}
+
+/* Table cells */
 th, td {
     padding: 10px;
     text-align: left;
 }
 
-
 td {
     background-color: rgb(252, 252, 252);
 }
-
-
-th {
-    background-color: #C8EC8E;
-}
-
 
 td.actions, th.actions {
     text-align: right;
@@ -59,15 +59,16 @@ td.actions, th.actions {
     display: flex;
 }
 
-.theme_rows, .users_rows{
+/* Rows styling */
+.theme_rows, .users_rows {
     border-bottom: 1px solid  #C8EC8E;
 }
 
-.theme_rows:last-child, .users_rows:last-child{
+.theme_rows:last-child, .users_rows:last-child {
     border-bottom: none;
 }
 
-
+/* Button styles */
 .edit-button,.delete-button,.options-button {
     padding: 5px 10px;
     color: black;
@@ -76,41 +77,62 @@ td.actions, th.actions {
     transition: background-color 0.3s;
 }
 
-.edit-button:hover{
-    color: black;
+/* Dugme "Uredi" svetlije, a tamnije na hover */
+.edit-button {
+    border: 1px solid #a8d08d; /* Svetlija zelena */
+    background-color: #d4eac1; /* Još nežnija zelena */
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.edit-button{
-    border: 1px solid  #4A6443;
-    color: black;
+.edit-button:hover {
+    background-color: #a8d08d; /* Svetlija zelena pri hover-u */
+    color: white;
+    text-decoration: none;
 }
 
+/* Naziv teme svetlo lila boja */
+.theme-name {
+    color: #c8a2c8; /* Svetlo lila boja */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.theme-name:hover {
+    color: #b689b6; /* Tamnija lila pri hover-u */
+    text-decoration: underline;
+}
+
+
+/* Delete button */
 .delete-button {
-    background-color: red;
+    background-color: #e6a3a3; /* Nežna crvena boja */
     color: white;
 }
 
-.delete-button:hover{
-    background-color: rgb(158, 26, 26);
+.delete-button:hover {
+    background-color: #c82333; /* Tamnija crvena */
     color: white;
 }
 
-.theme-name{
+/* Theme name hover effect */
+.theme-name:hover {
     color: black;
 }
 
-.theme-name:hover{
-    color: black;
-}
-
-.no_theme{
+/* No theme message */
+.no_theme {
     width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     height: 200px;
-    margin-left: 35%;
+    margin-left: 50%;
     margin-top: 10%;
     margin-bottom: 15%;
     border-radius: 8px;
@@ -118,13 +140,15 @@ td.actions, th.actions {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.theme_option{
+/* Theme options styling */
+.theme_option {
     display: flex;
     flex-direction: row;
 }
 
-.reject-button{
-    background-color: red;
+/* Reject button */
+.reject-button {
+    background-color: #e6a3a3; /* Nežna crvena boja */
     padding: 5px 10px;
     color: white;
     border-radius: 4px;
@@ -134,27 +158,33 @@ td.actions, th.actions {
     width: 90px;
 }
 
-
-
-.reject-button:hover{
-    background-color: rgb(93, 14, 14);
+.reject-button:hover {
+    background-color: rgb(93, 14, 14); /* Tamnija crvena */
     color: white;
 }
 
-.accept-button{
+/* Accept button */
+.accept-button {
     padding: 5px 10px;
     color: black;
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid green;
+    background-color: #a8d08d; /* Svetlo zelena */
     transition: background-color 0.3s;
     margin-right: 5px;
     width: 100px;
 }
 
-.accept-button:hover{
-    text-decoration: underline;
-    color: black;
+.accept-button:hover {
+    text-decoration: none;
+    color: white;
 }
 
-
+/* Line under heading */
+.line {
+    width: 100%;
+    height: 0.5px;
+    background-color: gray;
+    margin-bottom: 4%;
+}

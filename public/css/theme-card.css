@@ -1,64 +1,143 @@
-.theme_Item{
+.theme_Item {
     justify-content: center;
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Promeni na kolonu da bi elementi išli odozgo nadole */
+    background-color: white; /* Daje belu pozadinu */
+    border-radius: 10px; /* Zaobljeni uglovi */
+    padding: 20px; /* Prostor unutar kartice */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Blaga senka */
+    max-width: 300px; /* Maksimalna širina */
+    margin-left: auto; /* Pomeranje kartice skroz desno */
+    margin-right: 10px;
+    min-height: 450px;
 }
 
+.theme_User {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.theme_User img {
+    border-radius: 50%; /* Zaobli sliku */
+    width: 50px;
+    height: 50px;
+    object-fit: cover; /* Osiguraj da slika bude dobro isečena */
+    margin-bottom: 10px;
+}
+
+.themes_Content {
+    text-align: left;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.themes_Title {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.themes_Text {
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 15px;
+}
+
+.follow {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+}
 
 .theme_button_comment {
-    padding: 3%;
-    color: black;
-    background-color: white;
-    border: 1px solid green;
+    padding: 10px;
+    color: white; /* Tekst ostaje beo */
+    background-color: #c8a2c8; /* Nežna lila boja */
+    border: none; /* Uklonjen okvir */
     border-radius: 5px;
     font-weight: bold;
     margin-right: 10px;
-    width: 120px;
+    transition: background-color 0.3s ease; /* Animacija pri hoveru */
+    text-decoration: none; /* Bez underline */
 }
 
-.follow{
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    /* width: 38%; */
-
+.theme_button_comment:hover {
+    background-color: #b689b6; /* Tamnija lila pri hoveru */
+    text-decoration: none; /* Bez underline */
+    color: white; /* Tekst ostaje beo */
 }
 
-.follow_button{
-    padding: 6%;
-    color: black;
-    background-color:rgb(217, 217, 241);
+.theme_button_comment:focus {
+    outline: none; /* Uklanja outline */
+    border: 2px solid #b689b6; /* Border na klik */
+}
+
+.btn-danger {
+    padding: 10px;
+    color: white;
+    background-color: #e6a3a3; /* Nežna crvena boja za "Otprati" */
+    border: none;
     border-radius: 5px;
     font-weight: bold;
-    width: 110px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Uklonjen underline */
 }
 
+.btn-danger:hover {
+    background-color: #c82333; /* Tamnija crvena boja pri hoveru */
+    text-decoration: none; /* Uklonjen underline pri hoveru */
+}
 
-  .theme_button_comment:hover{
-    color: black;
-  }
+.btn-danger:focus {
+    outline: none; /* Uklanja outline */
+    border: 2px solid #c82333; /* Border na klik */
+}
 
-  .vertical-line{
-    width: 0.2px;
-    height: 80%;
-    background-color:grey;
-  }
-
-  .followers-button{
-    color:black;
-    border: 1px solid black;
-    padding: 3%;
+.follow_button,
+.followers-button {
+    padding: 10px;
+    color: white;
+    background-color: #a8d08d; /* Nežna zelena boja za "Zaprati" dugme */
+    border: none; /* Bez okvira */
     border-radius: 5px;
-    width: 110px;
     font-weight: bold;
-    background-color:beige;
-  }
+    text-align: center;
+    width: 110px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Uklonjen underline */
+}
 
-  .followers-button:hover{
-    color: black;
-  }
+.follow_button:hover,
+.followers-button:hover {
+    background-color: #8cbf6b; /* Tamnija zelena pri hoveru */
+    text-decoration: none; /* Uklonjen underline pri hoveru */
+    color: white; /* Tekst ostaje beo */
+}
+
+.follow_button:focus,
+.followers-button:focus {
+    outline: none; /* Uklanja outline */
+    border: 2px solid #8cbf6b; /* Border na klik */
+}
+
+.themes_Image {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 0; /* Uklonjena donja margina kako bi se slika pomerila */
+}
+
+.themes_Image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.date {
+    text-align: right;
+    margin-top: 5px;
+    margin-bottom: 10px; /* Dodata donja margina za razmak ispod datuma */
+    font-size: 14px;
+    color: gray;
+}

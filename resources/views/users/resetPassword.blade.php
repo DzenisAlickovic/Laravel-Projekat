@@ -10,7 +10,7 @@
 
             <form method="POST" action="/users/{{$user->id}}">
                 @csrf
-                <label for="password">Nova sifra</label>
+                <label for="password">Nova šifra</label>
                 <input type="password" id="password" name="password">
 
                 @error('password')
@@ -30,7 +30,7 @@
 
 
             <label>Evo prilike da unesete novu šifru i osvežite sigurnost svog naloga.<br> <br>Vaša bezbednost je naš prioritet.</label>
-            <i class="fas fa-key key"></i>
+
 
         </div>
     </div>

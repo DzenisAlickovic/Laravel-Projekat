@@ -12,15 +12,15 @@
                     <div class="contact-items">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <p>Email: ekoaktivisti@gmail.com</p>
+                            <p>Email: Digioglasi@gmail.com</p>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <p>Telefon: +381 613000896</p>
+                            <p>Telefon: +381 637862940</p>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>Adresa: Kolubarska 62, Novi Pazar</p>
+                            <p>Adresa: Petra Mikovica 75, Novi Pazar</p>
                         </div>
                     </div>
                 </div>

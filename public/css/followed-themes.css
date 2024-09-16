@@ -6,7 +6,8 @@ body{
 .themes_Body {
     margin-bottom: 20px;
     padding: 1%;
-    margin-top: 5%;
+    margin-top: 10%;
+    margin-left: 200px;
     min-height: 65vh;
 }
 

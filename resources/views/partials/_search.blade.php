@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ asset('css/partials/search.css') }}">
 <form action="/themes">
     <div class="search-container">
-        <input type="text" placeholder="Pretraži teme.." name="search">
+        <input type="text" placeholder="Pretraži oglase" name="search">
         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
 </form>
