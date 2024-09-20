@@ -52,10 +52,12 @@
             </table>
         </div>
         @else
-            <div>
-                <p>Nema korisnika</p>
-            </div>
-
+        <div class="manage_container">
+        <h1 class="heading">Korisnici</h1>
+        <p style="font-size: 20px; color: black; font-weight: bold; background-color: #C8EC8E; padding: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
+            Nema korisnika
+        </p>
+    </div>
         @if ($themes->isNotEmpty())
             <div class="manage_container">
                 <h1 class="heading">Neodobrene oglasi</h1>
@@ -71,9 +73,14 @@
 
 
 <script>
-    function confirmDelete(userId) {
-        if (confirm('Da ii ste siguri da zelite da izbrisite korisnika?')) {
-            document.getElementById('delete-form-' + userId).submit();
-        }
+   function confirmDelete(userId) {
+    if (confirm('Da li ste sigurni da želite da izbrišete korisnika?')) {
+        // Ako korisnik potvrdi, submituje formu
+        document.getElementById('delete-form-' + userId).submit();
+    } else {
+        // Ako korisnik klikne na Cancel, ništa se ne dešava
+        return false; // prekida dalji tok funkcije
     }
+}
+
 </script>
