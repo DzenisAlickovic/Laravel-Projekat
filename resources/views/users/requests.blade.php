@@ -120,12 +120,13 @@
 
 </x-layout>
 
-
 <script>
     function confirmDelete(userId) {
-        if (confirm('Da ii ste siguri da zelite da izbrisite korisnika?')) {
-            // If user confirms, submit the form
+        var confirmation = confirm('Da li ste sigurni da želite da izbrišete korisnika?');
+        if (confirmation) {
+            // Ako korisnik potvrdi brisanje, submit-uj formu
             document.getElementById('delete-form-' + userId).submit();
         }
     }
 </script>
+
