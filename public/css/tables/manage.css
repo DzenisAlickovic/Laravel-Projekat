@@ -146,6 +146,25 @@ td.actions, th.actions {
     flex-direction: row;
 }
 
+/* Accept button */
+.accept-button {
+    padding: 5px 10px;
+    color: white; /* Tekst dugmeta je sada beo */
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid green;
+    background-color: #a8d08d; /* Svetlo zelena */
+    transition: background-color 0.3s;
+    margin-right: 5px;
+    width: 100px;
+}
+
+.accept-button:hover {
+    text-decoration: none;
+    background-color: #8cbf6b; /* Tamnija zelena boja pri hover-u */
+    color: white;
+}
+
 /* Reject button */
 .reject-button {
     background-color: #e6a3a3; /* Nežna crvena boja */
@@ -160,24 +179,6 @@ td.actions, th.actions {
 
 .reject-button:hover {
     background-color: rgb(93, 14, 14); /* Tamnija crvena */
-    color: white;
-}
-
-/* Accept button */
-.accept-button {
-    padding: 5px 10px;
-    color: black;
-    border-radius: 4px;
-    cursor: pointer;
-    border: 1px solid green;
-    background-color: #a8d08d; /* Svetlo zelena */
-    transition: background-color 0.3s;
-    margin-right: 5px;
-    width: 100px;
-}
-
-.accept-button:hover {
-    text-decoration: none;
     color: white;
 }
 

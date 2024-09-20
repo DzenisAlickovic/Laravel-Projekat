@@ -90,14 +90,16 @@
                             <td>{{ $user->country }}</td>
                             <td class="actions" style="padding-top:2%">
                                 <div style="display: flex;">
-                                    <form method="POST" action="{{ route('users.accept', $user) }}">
-                                        @csrf
-                                        <button class="accept-button"><i class="fas fa-check" style="padding-right: 5px; color:green"></i>Prihvati</button>
-                                    </form>
-                                    <form method="POST" action="{{ route('users.reject', $user) }}">
-                                        @csrf
-                                        <button class="reject-button"><i class="fas fa-times" style="padding-right: 5px"></i>Odbij</button>
-                                    </form>
+                                   <!-- Accept and Reject buttons -->
+<form method="POST" action="{{ route('users.accept', $user) }}">
+    @csrf
+    <button class="accept-button">Prihvati</button>
+</form>
+<form method="POST" action="{{ route('users.reject', $user) }}">
+    @csrf
+    <button class="reject-button">Odbij</button>
+</form>
+
 
                                 </div>
                             </td>
