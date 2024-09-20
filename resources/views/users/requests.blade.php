@@ -110,7 +110,7 @@
         </table>
     </div>
 @else
-<div class="manage_container">
+    <div class="manage_container">
         <h1 class="heading">Korisnici</h1>
         <p style="font-size: 20px; color: black; font-weight: bold; background-color: #C8EC8E; padding: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
             Nema korisnika
@@ -129,7 +129,9 @@
         if (confirmation) {
             // Ako korisnik potvrdi brisanje, submit-uj formu
             document.getElementById('delete-form-' + userId).submit();
+        } else {
+            // Ako korisnik otkaže brisanje, prekini izvršenje
+            return false;
         }
     }
 </script>
-
