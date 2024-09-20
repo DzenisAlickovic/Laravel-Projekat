@@ -36,6 +36,14 @@
                         Promeni šifru
                     </a>
 
+                    <!-- Dodato dugme za prijavu za moderatora -->
+                    @if(auth()->user()->role === 'korisnik')
+                        <form action="/apply-for-moderator" method="POST" class="mod">
+                            @csrf
+                            <button class="dropdown-item" type="submit">Prijavi se za moderatora</button>
+                        </form>
+                    @endif
+
                     <form action="/logout" method="POST">
                         @csrf
                         <button type="submit" class="dropdown-item">Odjavi se</button>
