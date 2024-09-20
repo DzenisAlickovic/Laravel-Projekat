@@ -43,7 +43,7 @@
                             <form style="display: inline;" method="POST" action="/users/{{ $user->id }}" id="delete-form-{{ $user->id }}">
                                 @csrf
                                 @method('DELETE')
-                                <button class="delete-button" style="width: 90px; padding-right: 5px;" onclick="confirmDelete({{ $user->id }})">Izbriši</button>
+                                <button class="delete-button" style="width: 90px; padding-right: 5px;" onclick="return confirmDelete(event, {{ $user->id }})">Izbriši</button>
                             </form>
                         </td>
                     </tr>
@@ -51,7 +51,7 @@
                 </tbody>
             </table>
         </div>
-        @else
+    @else
         <div class="manage_container">
         <h1 class="heading">Korisnici</h1>
         <p style="font-size: 20px; color: black; font-weight: bold; background-color: #C8EC8E; padding: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
@@ -71,16 +71,15 @@
 
 </x-layout>
 
-
 <script>
-   function confirmDelete(userId) {
-    if (confirm('Da li ste sigurni da želite da izbrišete korisnika?')) {
-        // Ako korisnik potvrdi, submituje formu
-        document.getElementById('delete-form-' + userId).submit();
-    } else {
-        // Ako korisnik klikne na Cancel, ništa se ne dešava
-        return false; // prekida dalji tok funkcije
+   function confirmDelete(event, userId) {
+    if (!confirm('Da li ste sigurni da želite da izbrišete korisnika?')) {
+        // Ako korisnik klikne na Cancel, sprečavamo podnošenje forme
+        event.preventDefault();
+        return false;
     }
+    // Ako korisnik potvrdi, podnošenje forme se nastavlja
+    document.getElementById('delete-form-' + userId).submit();
 }
 
 </script>
