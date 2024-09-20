@@ -46,7 +46,7 @@
         <div class="manage_container">
             <h1 class="heading">Oglasi</h1>
             <p style="font-size: 20px; color:  black; font-weight:bold;background-color:#C8EC8E; padding:5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
-                Trenutno nema završenih oglasa
+                Trenutno nema oglasa
             </p>
         </div>
 
@@ -110,8 +110,11 @@
         </table>
     </div>
 @else
-    <div>
-        <p>Nema korisnika</p>
+<div class="manage_container">
+        <h1 class="heading">Korisnici</h1>
+        <p style="font-size: 20px; color: black; font-weight: bold; background-color: #C8EC8E; padding: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
+            Nema korisnika
+        </p>
     </div>
 @endunless
 
