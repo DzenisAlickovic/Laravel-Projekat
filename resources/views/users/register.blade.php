@@ -49,7 +49,6 @@
                 <select id="gender" name="gender">
                     <option value="male" {{ old('gender') === 'male' ? 'selected' : '' }}>Muško</option>
                     <option value="female" {{ old('gender') === 'female' ? 'selected' : '' }}>Žensko</option>
-                    <option value="other" {{ old('gender') === 'other' ? 'selected' : '' }}>Drugo</option>
                 </select>
                 @error('gender')
                 <p style="color: red">{{$message}}</p>
